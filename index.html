@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة العلّامة رؤوف - بوابة السحر التعليمي للسنة الخامسة ابتدائي</title>
+    <title>منصة العلّامة رؤوف - محطتك التعليمية الممتعة للسنة الخامسة ابتدائي</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS styles will go here */
-        /* Base Colors & Fonts - Harry Potter Theme */
+        /* CSS styles - Spacetoon Theme */
         :root {
-            --hp-gold: #c79f32; /* Primary Gold */
-            --hp-red: #740001; /* Primary Red (Gryffindor) */
-            --hp-darkblue: #222f5b; /* Primary Dark Blue (Ravenclaw) */
-            --hp-green: #1a472a; /* Primary Green (Slytherin) */
-            --hp-silver: #aaaaaa; /* Primary Silver (Hufflepuff) */
-            --hp-brown: #5d4037; /* Wood/Old Paper */
-            --hp-parchment: #f7e9c3; /* Parchment Background */
-            --hp-ink: #2c3e50; /* Dark Ink */
-            --hp-light-gray: #ecf0f1;
-            --hp-shadow: rgba(0,0,0,0.3);
+            --st-blue: #007BFF; /* Bright Blue */
+            --st-orange: #FF8C00; /* Energetic Orange */
+            --st-green: #28a745; /* Playful Green */
+            --st-purple: #6f42c1; /* Vibrant Purple */
+            --st-yellow: #ffc107; /* Cheerful Yellow */
+            --st-light-bg: #e0f7fa; /* Light background */
+            --st-dark-text: #343a40; /* Dark readable text */
+            --st-gray-text: #6c757d; /* Lighter text */
+            --st-shadow: rgba(0,0,0,0.2);
 
             --font-heading: 'Merriweather', serif;
             --font-body: 'Open Sans', sans-serif;
@@ -29,8 +27,8 @@
             font-family: var(--font-body);
             margin: 0;
             padding: 0;
-            background-color: var(--hp-parchment);
-            color: var(--hp-ink);
+            background-color: var(--st-light-bg);
+            color: var(--st-dark-text);
             line-height: 1.6;
             direction: rtl; /* Ensure RTL for Arabic content */
         }
@@ -43,18 +41,18 @@
 
         h1, h2, h3, h4 {
             font-family: var(--font-heading);
-            color: var(--hp-darkblue);
+            color: var(--st-blue);
             margin-bottom: 1rem;
         }
 
         a {
             text-decoration: none;
-            color: var(--hp-red);
+            color: var(--st-orange);
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: var(--hp-gold);
+            color: var(--st-purple);
         }
 
         p {
@@ -63,41 +61,41 @@
 
         .btn {
             display: inline-block;
-            background-color: var(--hp-gold);
-            color: var(--hp-ink);
+            background-color: var(--st-orange);
+            color: white;
             padding: 0.8rem 1.8rem;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 3px 6px var(--hp-shadow);
-            border: 2px solid var(--hp-red);
+            box-shadow: 0 3px 6px var(--st-shadow);
+            border: 2px solid var(--st-blue);
             cursor: pointer;
             font-family: var(--font-body);
         }
 
         .btn:hover {
-            background-color: var(--hp-red);
-            color: var(--hp-parchment);
+            background-color: var(--st-blue);
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 5px 10px var(--hp-shadow);
+            box-shadow: 0 5px 10px var(--st-shadow);
         }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--hp-darkblue), var(--hp-green));
+            background: linear-gradient(135deg, var(--st-blue), var(--st-purple));
             color: white;
             padding: 1.5rem;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            border-bottom: 4px solid var(--hp-gold);
+            border-bottom: 4px solid var(--st-yellow);
         }
 
         .logo {
             font-size: 2.8rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px var(--hp-ink);
+            text-shadow: 2px 2px 4px var(--st-dark-text);
         }
 
         .tagline {
@@ -108,7 +106,7 @@
 
         /* Navigation */
         nav {
-            background-color: var(--hp-ink);
+            background-color: var(--st-dark-text);
             padding: 0.7rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             position: sticky;
@@ -129,7 +127,7 @@
         }
 
         nav a {
-            color: var(--hp-parchment);
+            color: var(--st-light-bg);
             text-decoration: none;
             font-weight: bold;
             padding: 0.6rem 1.4rem;
@@ -140,9 +138,9 @@
         }
 
         nav a:hover {
-            background-color: var(--hp-darkblue);
-            color: var(--hp-gold);
-            border-color: var(--hp-gold);
+            background-color: var(--st-blue);
+            color: var(--st-yellow);
+            border-color: var(--st-yellow);
         }
 
         /* Hero Section */
@@ -152,12 +150,12 @@
             padding: 3rem;
             text-align: center;
             margin-bottom: 2.5rem;
-            box-shadow: 0 8px 20px var(--hp-shadow);
-            border: 4px double var(--hp-gold);
+            box-shadow: 0 8px 20px var(--st-shadow);
+            border: 4px double var(--st-orange);
         }
 
         .hero h1 {
-            color: var(--hp-red);
+            color: var(--st-blue);
             margin-bottom: 1.5rem;
             font-size: 2.5rem;
         }
@@ -165,7 +163,7 @@
         .hero p {
             font-size: 1.2rem;
             line-height: 1.8;
-            color: #555;
+            color: var(--st-gray-text);
             max-width: 800px;
             margin: 0 auto 2rem auto;
         }
@@ -182,22 +180,22 @@
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px var(--hp-shadow);
+            box-shadow: 0 5px 15px var(--st-shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid var(--hp-silver);
+            border: 2px solid var(--st-green);
         }
 
         .subject-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 25px var(--hp-shadow);
-            border-color: var(--hp-gold);
+            box-shadow: 0 10px 25px var(--st-shadow);
+            border-color: var(--st-orange);
         }
 
         .subject-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-bottom: 1px solid var(--hp-light-gray);
+            border-bottom: 1px solid var(--st-light-bg);
         }
 
         .subject-content {
@@ -206,13 +204,13 @@
         }
 
         .subject-content h3 {
-            color: var(--hp-darkblue);
+            color: var(--st-blue);
             margin-top: 0;
             font-size: 1.7rem;
         }
 
         .subject-content p {
-            color: #666;
+            color: var(--st-gray-text);
             line-height: 1.6;
             font-size: 1rem;
         }
@@ -223,14 +221,14 @@
             border-radius: 10px;
             padding: 3rem;
             margin-bottom: 2.5rem;
-            box-shadow: 0 8px 20px var(--hp-shadow);
-            border: 4px double var(--hp-brown);
+            box-shadow: 0 8px 20px var(--st-shadow);
+            border: 4px double var(--st-purple);
         }
 
         section h2 {
-            color: var(--hp-red);
+            color: var(--st-orange);
             margin-top: 0;
-            border-bottom: 3px solid var(--hp-gold);
+            border-bottom: 3px solid var(--st-yellow);
             padding-bottom: 1rem;
             text-align: center;
             font-size: 2.2rem;
@@ -239,7 +237,7 @@
         .section-description {
             text-align: center;
             font-size: 1.1rem;
-            color: #555;
+            color: var(--st-gray-text);
             margin-bottom: 2rem;
         }
 
@@ -252,35 +250,35 @@
         }
 
         .activity-card {
-            background-color: var(--hp-light-gray);
+            background-color: var(--st-light-bg);
             border-radius: 8px;
             padding: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid var(--hp-silver);
+            border: 2px solid var(--st-green);
             text-align: center;
         }
 
         .activity-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px var(--hp-shadow);
-            border-color: var(--hp-gold);
+            box-shadow: 0 8px 15px var(--st-shadow);
+            border-color: var(--st-orange);
         }
 
         .activity-card h4 {
-            color: var(--hp-ink);
+            color: var(--st-dark-text);
             margin-top: 0;
             font-size: 1.4rem;
         }
 
         .activity-card p {
-            color: #555;
+            color: var(--st-gray-text);
             margin-bottom: 1.5rem;
         }
 
-        /* Interactive Box */
+        /* Interactive Box (now static content display) */
         .interactive-box {
-            background-color: var(--hp-parchment);
-            border-left: 5px solid var(--hp-darkblue);
+            background-color: white;
+            border-left: 5px solid var(--st-blue);
             padding: 1.5rem;
             margin: 1.5rem 0;
             border-radius: 0 8px 8px 0;
@@ -289,85 +287,40 @@
 
         .interactive-box h4 {
             margin-top: 0;
-            color: var(--hp-darkblue);
+            color: var(--st-blue);
             font-size: 1.3rem;
             text-align: right;
-            border-bottom: 1px dashed var(--hp-silver);
+            border-bottom: 1px dashed var(--st-green);
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
         }
 
-        .interactive-box input[type="text"],
-        .interactive-box input[type="number"],
-        .interactive-box textarea {
-            width: calc(100% - 1.5rem);
-            padding: 0.8rem;
-            border: 1px solid var(--hp-silver);
-            border-radius: 5px;
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
-            font-family: var(--font-body);
-            background-color: #fff;
-        }
-
-        .interactive-box label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: var(--hp-ink);
-        }
-
         .quiz-option {
-            background-color: white;
-            border: 1px solid var(--hp-silver);
+            background-color: var(--st-light-bg);
+            border: 1px solid var(--st-green);
             padding: 0.8rem;
             margin: 0.6rem 0;
             border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: right;
         }
 
-        .quiz-option:hover {
-            background-color: var(--hp-light-gray);
-            border-color: var(--hp-gold);
-            transform: scale(1.01);
-        }
-
-        .quiz-option.correct {
+        .quiz-option.correct-answer {
             background-color: #d4edda; /* Light green */
             border-color: #28a745; /* Darker green */
             color: #155724;
             font-weight: bold;
         }
 
-        .quiz-option.incorrect {
-            background-color: #f8d7da; /* Light red */
-            border-color: #dc3545; /* Darker red */
-            color: #721c24;
-            font-weight: bold;
-        }
-
-        .feedback {
+        .answer-display {
             padding: 1rem;
             margin: 1rem 0;
             border-radius: 5px;
-            display: none;
-            font-weight: bold;
-        }
-
-        .feedback.correct {
-            background-color: #d4edda;
+            background-color: #d4edda; /* Light green */
             color: #155724;
-            display: block;
+            font-weight: bold;
             border: 1px solid #c3e6cb;
-        }
-
-        .feedback.incorrect {
-            background-color: #f8d7da;
-            color: #721c24;
-            display: block;
-            border: 1px solid #f5c6cb;
+            text-align: right;
         }
 
         /* Download Section */
@@ -376,7 +329,7 @@
         }
 
         .download-btn-modal {
-            background-color: var(--hp-red);
+            background-color: var(--st-blue);
             color: white;
             padding: 0.8rem 1.5rem;
             border-radius: 5px;
@@ -385,23 +338,23 @@
             display: inline-block;
             margin-top: 1rem;
             transition: background-color 0.3s ease;
-            border: 2px solid var(--hp-gold);
+            border: 2px solid var(--st-yellow);
             font-family: var(--font-body);
         }
 
         .download-btn-modal:hover {
-            background-color: var(--hp-darkblue);
-            border-color: var(--hp-red);
+            background-color: var(--st-orange);
+            border-color: var(--st-blue);
         }
 
         /* Footer */
         footer {
-            background-color: var(--hp-ink);
+            background-color: var(--st-dark-text);
             color: white;
             text-align: center;
             padding: 2.5rem 1rem;
             margin-top: 2.5rem;
-            border-top: 4px solid var(--hp-gold);
+            border-top: 4px solid var(--st-yellow);
         }
 
         .footer-links {
@@ -421,7 +374,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--hp-gold);
+            color: var(--st-yellow);
             text-decoration: underline;
         }
 
@@ -431,7 +384,7 @@
             opacity: 0.8;
         }
 
-        /* Modal Styles */
+        /* Modal Styles (basic display) */
         .modal {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
@@ -448,7 +401,7 @@
         }
 
         .modal-content {
-            background-color: var(--hp-parchment);
+            background-color: var(--st-light-bg);
             margin: auto; /* Center vertically and horizontally */
             padding: 2.5rem;
             border-radius: 12px;
@@ -456,7 +409,7 @@
             max-width: 600px;
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            border: 4px double var(--hp-brown);
+            border: 4px double var(--st-purple);
             text-align: center;
         }
 
@@ -473,15 +426,15 @@
 
         .close-btn:hover,
         .close-btn:focus {
-            color: var(--hp-red);
+            color: var(--st-orange);
             text-decoration: none;
             transform: rotate(5deg);
         }
 
         .modal-content h2 {
-            color: var(--hp-darkblue);
+            color: var(--st-blue);
             margin-bottom: 1.5rem;
-            border-bottom: 2px dashed var(--hp-silver);
+            border-bottom: 2px dashed var(--st-green);
             padding-bottom: 0.8rem;
         }
 
@@ -492,7 +445,7 @@
 
         .modal-content label {
             font-weight: bold;
-            color: var(--hp-ink);
+            color: var(--st-dark-text);
             margin-bottom: 0.5rem;
             display: block;
         }
@@ -502,7 +455,7 @@
         .modal-content textarea {
             width: calc(100% - 20px); /* Adjust for padding */
             padding: 10px;
-            border: 1px solid var(--hp-silver);
+            border: 1px solid var(--st-green);
             border-radius: 5px;
             font-size: 1rem;
             font-family: var(--font-body);
@@ -611,35 +564,35 @@
 <body>
     <header>
         <div class="logo">منصة العلّامة رؤوف</div>
-        <div class="tagline">بوابة السحر التعليمي للسنة الخامسة ابتدائي</div>
+        <div class="tagline">محطتك التعليمية الممتعة للسنة الخامسة ابتدائي</div>
     </header>
 
     <nav>
         <ul>
             <li><a href="#home">الرئيسية</a></li>
             <li><a href="#subjects">المواد الدراسية</a></li>
-            <li><a href="#activities">الأنشطة السحرية</a></li>
-            <li><a href="#downloads">قاعة التحميلات</a></li>
+            <li><a href="#activities">الأنشطة المرحة</a></li>
+            <li><a href="#downloads">مكتبة الملفات</a></li>
             <li><a href="#about">عن المنصة</a></li>
         </ul>
     </nav>
 
     <main class="container">
         <section id="home" class="hero">
-            <h1>أهلاً بكم في هوجورتس المعرفة!</h1>
-            <p>انطلق في رحلة تعليمية ساحرة مع منصة العلّامة رؤوف، حيث تتحول الدروس إلى مغامرات ممتعة وتمارين تفاعلية تجعل التعلم تجربة لا تُنسى للسنة الخامسة ابتدائي. اكتشف عالم المعرفة بأسلوب تفاعلي ومسلي!</p>
-            <a href="#subjects" class="btn">ابدأ رحلتك التعليمية السحرية</a>
+            <h1>أهلاً بكم في عالم سبايس تون التعليمي!</h1>
+            <p>انطلق في رحلة تعليمية شيقة ومفيدة مع منصة العلّامة رؤوف، حيث تتحول الدروس إلى مغامرات ممتعة وتمارين تفاعلية تجعل التعلم تجربة لا تُنسى لتلاميذ السنة الخامسة ابتدائي. اكتشف عالم المعرفة بأسلوب مشوق ومسلٍ!</p>
+            <a href="#subjects" class="btn">ابدأ رحلتك التعليمية الممتعة</a>
         </section>
 
         <section id="subjects">
-            <h2>المواد الدراسية السحرية</h2>
+            <h2>المواد الدراسية الشيقة</h2>
             <p class="section-description">استكشف كنوز المعرفة في موادنا الدراسية المصممة بعناية لتناسب تلاميذ السنة الخامسة ابتدائي.</p>
             <div class="subjects">
                 <div class="subject-card">
                     <img src="https://via.placeholder.com/400x200?text=اللغة+العربية" alt="اللغة العربية">
                     <div class="subject-content">
                         <h3>اللغة العربية</h3>
-                        <p>تعلّم أسرار لغتنا الجميلة: قواعد النحو الساحرة، فنون الإملاء، وأسرار التعبير الكتابي وقراءة النصوص بطلاقة وفهم عميق.</p>
+                        <p>تعلّم أسرار لغتنا الجميلة: قواعد النحو، فنون الإملاء، وأسرار التعبير الكتابي وقراءة النصوص بطلاقة وفهم عميق. سنغوص في أعماق الكلمات لنكتشف جمالها وقوتها.</p>
                         <a href="#arabic" class="btn">استكشف الدروس</a>
                     </div>
                 </div>
@@ -648,7 +601,7 @@
                     <img src="https://via.placeholder.com/400x200?text=الرياضيات" alt="الرياضيات">
                     <div class="subject-content">
                         <h3>الرياضيات</h3>
-                        <p>اغوص في عالم الأعداد الغامض، اكتشف أبعاد الهندسة، أتقن فنون القياس، وحلّ الألغاز الحسابية المعقدة بتمارين تفاعلية وشروحات واضحة.</p>
+                        <p>اغوص في عالم الأعداد، اكتشف أبعاد الهندسة، أتقن فنون القياس، وحلّ الألغاز الحسابية المعقدة بتمارين تفاعلية وشروحات واضحة. الرياضيات ممتعة أكثر مما تتخيل!</p>
                         <a href="#math" class="btn">استكشف الدروس</a>
                     </div>
                 </div>
@@ -657,7 +610,7 @@
                     <img src="https://via.placeholder.com/400x200?text=اللغة+الفرنسية" alt="اللغة الفرنسية">
                     <div class="subject-content">
                         <h3>اللغة الفرنسية</h3>
-                        <p>تحدّث لغة السحر والدبلوماسية! طوّر مهاراتك في اللغة الفرنسية من خلال دروس القواعد الواضحة، المفردات الغنية، وفهم النصوص بطلاقة.</p>
+                        <p>تحدّث لغة جديدة! طوّر مهاراتك في اللغة الفرنسية من خلال دروس القواعد الواضحة، المفردات الغنية، وفهم النصوص بطلاقة. ستصبح محترفاً في التواصل.</p>
                         <a href="#french" class="btn">استكشف الدروس</a>
                     </div>
                 </div>
@@ -665,13 +618,14 @@
         </section>
 
         <section id="downloads" class="download-section">
-            <h2>قاعة التحميلات السرية</h2>
-            <p class="section-description">اكتشف مخطوطات المعرفة! يمكنك تحميل جميع الدروس والتمارين كملفات PDF للاحتفاظ بها والاستفادة منها في أي وقت دون الحاجة للاتصال بالإنترنت.</p>
-            <a href="#" class="btn download-btn-modal" id="downloadPdfBtn">افتح خزانة التحميلات السحرية</a>
+            <h2>مكتبة الملفات التعليمية</h2>
+            <p class="section-description">اكتشف كنوز المعرفة! يمكنك تحميل جميع الدروس والتمارين كملفات PDF للاحتفاظ بها والاستفادة منها في أي وقت دون الحاجة للاتصال بالإنترنت.</p>
+            <a href="#" class="btn download-btn-modal" id="downloadPdfBtn">افتح خزانة التحميلات</a>
+            <p style="font-size: 0.9em; color: red; margin-top: 1rem;">*ملاحظة: وظيفة تحميل ملفات PDF هي ميزة تتطلب دعماً من جانب الخادم، وهي غير متوفرة بشكل مباشر في هذا العرض التوضيحي. الروابط أدناه هي أمثلة توضيحية.</p>
         </section>
 
         <section id="activities">
-            <h2>الأنشطة التفاعلية الساحرة</h2>
+            <h2>الأنشطة التفاعلية المرحة</h2>
             <p class="section-description">اجعل التعلم مغامرة! استمتع بتحديات عقلية شيقة وأنماط لعب مبتكرة مصممة خصيصاً لتلاميذ السنة الخامسة ابتدائي.</p>
 
             <div class="activity-grid">
@@ -679,14 +633,20 @@
                     <h4>تمرين في اللغة العربية: ترتيب الكلمات</h4>
                     <p>رتب الجمل التالية لتكوين فقرة مترابطة ومنطقية تحكي قصة قصيرة:</p>
                     <div class="interactive-box">
-                        <p>اسحب الجمل لترتيبها الصحيح:</p>
-                        <div id="arabicOrderExercise" style="display: flex; flex-direction: column; gap: 0.5rem; background-color: white; padding: 1rem; border-radius: 5px;">
-                            <div class="quiz-option draggable" draggable="true" data-order="3">وبعد أن أنهى واجباته، لعب مع أصدقائه في الحديقة.</div>
-                            <div class="quiz-option draggable" draggable="true" data-order="1">استيقظ أحمد مبكراً في صباح يوم مشرق.</div>
-                            <div class="quiz-option draggable" draggable="true" data-order="2">تناول فطوره الشهي ثم ذهب إلى المدرسة بحماس.</div>
-                            <div class="quiz-option draggable" draggable="true" data-order="4">عاد إلى البيت في المساء سعيداً بDيومه المليء بالنشاط.</div>
-                        </div>
-                        <button class="btn" onclick="checkOrder()">تحقق من ترتيب الجمل</button>
+                        <p><b>الجمل الأصلية (فكر في ترتيبها الصحيح):</b></p>
+                        <ol>
+                            <li>وبعد أن أنهى واجباته، لعب مع أصدقائه في الحديقة.</li>
+                            <li>استيقظ أحمد مبكراً في صباح يوم مشرق.</li>
+                            <li>تناول فطوره الشهي ثم ذهب إلى المدرسة بحماس.</li>
+                            <li>عاد إلى البيت في المساء سعيداً بيومه المليء بالنشاط.</li>
+                        </ol>
+                        <p><b>الترتيب الصحيح:</b></p>
+                        <ol class="answer-display">
+                            <li>استيقظ أحمد مبكراً في صباح يوم مشرق.</li>
+                            <li>تناول فطوره الشهي ثم ذهب إلى المدرسة بحماس.</li>
+                            <li>وبعد أن أنهى واجباته، لعب مع أصدقائه في الحديقة.</li>
+                            <li>عاد إلى البيت في المساء سعيداً بيومه المليء بالنشاط.</li>
+                        </ol>
                     </div>
                 </article>
 
@@ -694,10 +654,8 @@
                     <h4>مسألة رياضيات: حساب المساحة</h4>
                     <p>احسب مساحة حديقة مستطيلة الشكل طولها 15 مترًا وعرضها 8 أمتار:</p>
                     <div class="interactive-box">
-                        <label for="mathAnswer">المساحة هي:</label>
-                        <input type="number" id="mathAnswer" placeholder="أدخل الإجابة بالمتر المربع">
-                        <button class="btn" onclick="checkMathAnswer()">تحقق من الحل</button>
-                        <div class="feedback" id="mathFeedback"></div>
+                        <p><b>الحل:</b></p>
+                        <p class="answer-display">المساحة هي: 120 متر مربع (الطول × العرض = 15 × 8 = 120)</p>
                     </div>
                 </article>
 
@@ -706,32 +664,47 @@
                     <p>اختر التصريف الصحيح للفعل "être" في الجملة التالية:</p>
                     <div class="interactive-box">
                         <p>Les élèves ____ intelligents. (être au présent)</p>
-                        <div class="quiz-option" onclick="checkFrenchAnswer(this, 'correct')">sont</div>
-                        <div class="quiz-option" onclick="checkFrenchAnswer(this, 'incorrect')">est</div>
-                        <div class="quiz-option" onclick="checkFrenchAnswer(this, 'incorrect')">sommes</div>
-                        <div class="feedback" id="frenchFeedback"></div>
+                        <div class="quiz-option correct-answer">sont</div>
+                        <div class="quiz-option">est</div>
+                        <div class="quiz-option">sommes</div>
+                        <p class="answer-display">الإجابة الصحيحة هي: sont</p>
                     </div>
                 </article>
 
                 <article class="activity-card">
-                    <h4>لعبة المفردات: المطابقة السحرية</h4>
+                    <h4>لعبة المفردات: المطابقة الممتعة</h4>
                     <p>اطابق الكلمة بمعناها الصحيح لسبر أغوار المفردات الجديدة:</p>
-                    <div class="interactive-box" style="display: flex; flex-direction: column; align-items: center;">
-                        <p>اسحب الكلمة إلى معناها المطابق:</p>
-                        <div style="display: flex; justify-content: space-around; width: 100%; gap: 1rem;">
-                            <div id="wordsContainer" style="border: 2px dashed var(--hp-darkblue); padding: 1rem; min-height: 150px; width: 45%; border-radius: 8px;">
-                                <div draggable="true" class="draggable-word quiz-option" data-word="شجاع">شجاع</div>
-                                <div draggable="true" class="draggable-word quiz-option" data-word="مشرق">مشرق</div>
-                            </div>
-                            <div id="meaningsContainer" style="border: 2px dashed var(--hp-darkblue); padding: 1rem; min-height: 150px; width: 45%; border-radius: 8px;" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                <div class="meaning-target" data-meaning="لا يخاف، جريء">لا يخاف، جريء</div>
-                                <div class="meaning-target" data-meaning="لامع، مضيء">لامع، مضيء</div>
-                            </div>
-                        </div>
-                        <button class="btn" style="margin-top: 1rem;" onclick="checkVocabularyMatch()">تحقق من المطابقة</button>
-                        <div class="feedback" id="vocabularyFeedback"></div>
+                    <div class="interactive-box">
+                        <p><b>الكلمات ومعانيها:</b></p>
+                        <ul class="answer-display" style="list-style-type: none; padding: 0;">
+                            <li>شجاع: لا يخاف، جريء</li>
+                            <li>مشرق: لامع، مضيء</li>
+                            <li>ودود: لطيف، محب للآخرين</li>
+                            <li>مغامرة: رحلة مليئة بالإثارة والتحديات</li>
+                        </ul>
                     </div>
                 </article>
+
+                <article class="activity-card">
+                    <h4>لغز الأرقام: تسلسل الأعداد</h4>
+                    <p>اكتشف القاعدة وأكمل التسلسل العددي التالي:</p>
+                    <div class="interactive-box">
+                        <p>5, 10, 15, 20, ___, ___</p>
+                        <p><b>الحل:</b></p>
+                        <p class="answer-display">القاعدة هي إضافة 5 في كل مرة. التسلسل الكامل: 5, 10, 15, 20, 25, 30</p>
+                    </div>
+                </article>
+
+                <article class="activity-card">
+                    <h4>اكتشف الخطأ الإملائي</h4>
+                    <p>حدد الكلمة التي تحتوي على خطأ إملائي في الجملة التالية وصححها:</p>
+                    <div class="interactive-box">
+                        <p>ذهبتُ إلى <b>المدرسَة</b> اليوم لتعلم دروس جديدة.</p>
+                        <p><b>الحل:</b></p>
+                        <p class="answer-display">الكلمة الخاطئة هي "المدرسَة". التصحيح: "المدرسة".</p>
+                    </div>
+                </article>
+
             </div>
         </section>
 
@@ -741,31 +714,33 @@
             <article class="subject-card" style="margin-bottom: 2rem;">
                 <div class="subject-content">
                     <h3>النصوص وفهم المقروء: مغامرات في عالم الكلمات</h3>
-                    <p>اقرأ القصة التالية بعناية، ثم أجب عن الأسئلة التي تليها لاختبار فهمك السحري للنص:</p>
+                    <p>اقرأ القصة التالية بعناية، ثم أجب عن الأسئلة التي تليها لاختبار فهمك للنص:</p>
 
                     <div class="interactive-box">
-                        <h4>نص: رحلة السندباد الصغير</h4>
-                        <p>كان هناك طفل صغير يدعى فادي، يحلم بأن يصبح بحارًا مشهورًا مثل السندباد. في كل صباح، كان يتجه إلى شاطئ البحر القريب من قريته، يتأمل السفن وهي تبحر بعيداً، ويستمع إلى حكايات البحارة الكبار عن جزر غريبة وكائنات بحرية عجيبة. ذات يوم، وجد فادي زجاجة قديمة تحمل خريطة بالية. لمعت عيناه حماساً، فقد كانت خريطة لكنز مخبأ في جزيرة مهجورة! قرر فادي أن يخوض مغامرته الخاصة، فجهّز قارباً صغيراً وأخذ معه بعض المؤن، وودّع والديه الذين باركوا شجاعته، وانطلق نحو الأفق.</p>
-                        <p>واجه فادي في رحلته أمواجاً عاتية وعواصف مفاجئة، لكن إصراره وعزيمته لم تهتز. التقى بدلافين ودودة أرشدته الطريق، ورأى طيور النورس تحلق فوق رأسه وكأنها تراقب مساره. بعد أيام وليالٍ، وصل أخيراً إلى الجزيرة المجهولة. كانت الأشجار تكسوها بغزارة، والرمال بيضاء ناصعة. اتبع فادي الخريطة بدقة، وبعد بحث طويل، وجد صندوقاً خشبياً قديماً مدفوناً تحت شجرة نخيل ضخمة. فتحه بحذر ليجد بداخله مجموعة من الكتب القديمة عن الحكمة والمعرفة، ورسالة تقول: "الكنز الحقيقي ليس ذهباً ولا فضة، بل هو العلم والعزيمة والشجاعة."</p>
+                        <h4>نص: رحلة الفأر الشجاع "فلفول"</h4>
+                        <p>كان هناك فأر صغير يدعى فلفول، يعيش في حقل واسع ومليء بالزهور. على عكس الفئران الأخرى التي كانت تفضل البقاء بالقرب من جحورها، كان فلفول يحلم باستكشاف العالم الواسع خارج الحقل. كان يستمع بحماس إلى حكايات الطيور المهاجرة عن الجبال الشاهقة والأنهار المتدفقة والغابات الكثيفة. ذات يوم، بينما كان يتجول عند حافة الحقل، وجد خريطة قديمة تبدو وكأنها سقطت من حقيبة مسافر. لمعت عيناه شغفاً، فقد كانت خريطة لقرية جميلة تقع خلف الجبل، وتوعد بوجود حبة جبن كبيرة هناك!</p>
+                        <p>قرر فلفول أن يخوض مغامرته الخاصة. جهّز حقيبة صغيرة وضع فيها بعض حبات القمح، وودّع أصدقاءه الفئران الذين تمنوا له التوفيق، وانطلق نحو الجبل. واجه فلفول في رحلته تحديات كثيرة: عبر جدولاً مائياً واسعاً بقفزات جريئة، تسلق صخوراً عالية بحذر، وتجنب طيور البوم التي كانت تحلق في السماء. التقى بسنجاب ودود أرشده إلى طريق مختصر عبر غابة صغيرة، ورأى فراشات ملونة تحلق حوله وكأنها تشجعه على المضي قدماً.</p>
+                        <p>بعد مسيرة طويلة مليئة بالإثارة، وصل فلفول أخيراً إلى القرية. كانت المنازل صغيرة وجميلة، وروائح الطعام الشهية تملأ الأجواء. اتبع فلفول الخريطة بدقة، وبعد بحث قصير، وجد مخبأً صغيراً في زاوية مطبخ أحد المنازل. فتحه بحذر ليجد بداخله قطعة جبن كبيرة ولذيذة! لم تكن قطعة الجبن هي الكنز الوحيد، فقد أدرك فلفول أن الكنز الحقيقي هو الشجاعة التي اكتسبها، والمعرفة التي تعلمها من رحلته، والصداقات التي كونها في طريقه. عاد فلفول إلى حقله وهو يحمل قطعة الجبن بفخر، ويحكي لأصدقائه قصص مغامراته الشيقة، ملهمًا إياهم لاستكشاف عوالمهم الخاصة.</p>
 
-                        <h4 style="margin-top: 1.5rem;">الأسئلة:</h4>
+                        <h4 style="margin-top: 1.5rem;">الأسئلة (حاول الإجابة عنها بنفسك):</h4>
                         <ol style="text-align: right;">
-                            <li>ما هو حلم فادي؟</li>
-                            <li>ماذا وجد فادي على شاطئ البحر؟</li>
-                            <li>كيف كانت رحلة فادي وما هي الكائنات التي التقى بها؟</li>
-                            <li>ماذا وجد فادي داخل الصندوق الخشبي؟</li>
-                            <li>ما هي الرسالة التي تعلمها فادي من هذه المغامرة؟</li>
+                            <li>ما هو حلم الفأر فلفول؟</li>
+                            <li>ماذا وجد فلفول عند حافة الحقل؟</li>
+                            <li>اذكر بعض التحديات التي واجهها فلفول في رحلته.</li>
+                            <li>من الذي ساعد فلفول في الغابة؟</li>
+                            <li>ماذا وجد فلفول داخل المخبأ في القرية؟</li>
+                            <li>ما هي الرسالة الحقيقية التي تعلمها فلفول من هذه المغامرة؟</li>
+                            <li>صف شعور فلفول عندما عاد إلى حقله.</li>
                         </ol>
-
-                        <textarea style="width: 100%; min-height: 150px; padding: 0.8rem; border: 1px solid var(--hp-silver); border-radius: 5px;" placeholder="أجب عن الأسئلة هنا..."></textarea>
-                        <button class="btn" style="margin-top: 0.8rem;">تحقق من إجاباتك</button>
+                        <textarea style="width: 100%; min-height: 150px; padding: 0.8rem; border: 1px solid var(--st-green); border-radius: 5px;" placeholder="أجب عن الأسئلة هنا..."></textarea>
+                        <p style="text-align: center; color: var(--st-blue);">*فكر في إجاباتك وقارنها بالقصة! لا يوجد زر للتحقق في هذا العرض.</p>
                     </div>
                 </div>
             </article>
 
             <article class="subject-card">
                 <div class="subject-content">
-                    <h3>القواعد النحوية: إعراب الكلمات وسحر اللغة</h3>
+                    <h3>القواعد النحوية: إعراب الكلمات وبناء الجمل</h3>
                     <p>اكتشف بناء الجملة العربية من خلال تمرين الإعراب، حيث ستتعلم كيف تتحول الكلمات إلى كيانات ذات معنى ودور في الجملة:</p>
 
                     <div class="interactive-box">
@@ -774,35 +749,51 @@
 
                         <div style="margin-top: 1.2rem;">
                             <label>صعد:</label>
-                            <input type="text" data-answer="فعل ماض مبني على الفتح" placeholder="نوع الكلمة وحالتها">
+                            <div class="answer-display">فعل ماضٍ مبني على الفتح.</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>الولد:</label>
-                            <input type="text" data-answer="فاعل مرفوع وعلامة رفعه الضمة الظاهرة على آخره" placeholder="فاعل، علامة الرفع">
+                            <div class="answer-display">فاعل مرفوع وعلامة رفعه الضمة الظاهرة على آخره.</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>الشجاع:</label>
-                            <input type="text" data-answer="نعت مرفوع وعلامة رفعه الضمة الظاهرة على آخره" placeholder="نعت، علامة الرفع">
+                            <div class="answer-display">نعت (صفة) مرفوع وعلامة رفعه الضمة الظاهرة على آخره.</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>فوق:</label>
-                            <input type="text" data-answer="ظرف مكان منصوب وعلامة نصبه الفتحة الظاهرة على آخره" placeholder="ظرف مكان، علامة النصب">
+                            <div class="answer-display">ظرف مكان منصوب وعلامة نصبه الفتحة الظاهرة على آخره.</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>الشجرة:</label>
-                            <input type="text" data-answer="مضاف إليه مجرور وعلامة جره الكسرة الظاهرة على آخره" placeholder="مضاف إليه، علامة الجر">
+                            <div class="answer-display">مضاف إليه مجرور وعلامة جره الكسرة الظاهرة على آخره.</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>العالية:</label>
-                            <input type="text" data-answer="نعت مجرور وعلامة جره الكسرة الظاهرة على آخره" placeholder="نعت، علامة الجر">
+                            <div class="answer-display">نعت (صفة) مجرور وعلامة جره الكسرة الظاهرة على آخره.</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>بمهارة:</label>
-                            <input type="text" data-answer="الباء: حرف جر. مهارة: اسم مجرور وعلامة جره الكسرة الظاهرة على آخره." placeholder="حرف جر، اسم مجرور">
+                            <div class="answer-display">الباء: حرف جر. مهارة: اسم مجرور وعلامة جره الكسرة الظاهرة على آخره.</div>
                         </div>
+                    </div>
+                </div>
+            </article>
 
-                        <button class="btn" style="margin-top: 1.5rem;" onclick="checkArabicGrammar()">تحقق من الإعراب</button>
-                        <div class="feedback" id="arabicGrammarFeedback"></div>
+            <article class="subject-card" style="margin-top: 2rem;">
+                <div class="subject-content">
+                    <h3>التعبير الكتابي: كيف تكتب قصة شيقة؟</h3>
+                    <p>تعلم خطوات كتابة قصة قصيرة ممتعة وجذابة. القصة الجيدة تحتاج إلى بداية، وسط، ونهاية، بالإضافة إلى شخصيات وأحداث مثيرة.</p>
+                    <div class="interactive-box">
+                        <h4>عناصر القصة الرئيسية:</h4>
+                        <ul style="text-align: right; list-style: arabic-indic;">
+                            <li><b>الشخصيات:</b> من هم أبطال قصتك؟ صفهم جيداً (أحمد، سلمى، الفأر فلفول...).</li>
+                            <li><b>الزمان والمكان:</b> متى وأين حدثت القصة؟ (في صباح يوم مشمس، في الغابة الكثيفة...).</li>
+                            <li><b>المشكلة أو الحدث الرئيسي:</b> ما هو التحدي الذي واجه الشخصيات؟ (خريطة لكنز، لغز محير...).</li>
+                            <li><b>سلسلة الأحداث:</b> كيف تطورت الأحداث لحل المشكلة؟ (الرحلة، المساعدة من صديق، البحث...).</li>
+                            <li><b>الحل والخاتمة:</b> كيف انتهت القصة؟ وما هو الدرس المستفاد؟ (وجد الكنز، عاد سعيداً، تعلم الشجاعة...).</li>
+                        </ul>
+                        <p><b>تدريب:</b> اكتب قصة قصيرة من خيالك مستخدماً العناصر المذكورة أعلاه. اجعلها مليئة بالمغامرات!</p>
+                        <textarea style="width: 100%; min-height: 200px; padding: 0.8rem; border: 1px solid var(--st-green); border-radius: 5px;" placeholder="اكتب قصتك هنا..."></textarea>
                     </div>
                 </div>
             </article>
@@ -819,31 +810,23 @@
                     <div class="interactive-box">
                         <h4>مسألة 1: تجارة التوابل</h4>
                         <p>اشترى تاجر 15 طنًا و 500 كيلوغرام من التوابل. إذا كان وزن العربة الفارغة 2 طن و 750 كيلوغرامًا. فما هو وزن التوابل الصافي بالكيلوغرامات؟</p>
-
-                        <div style="margin-top: 1.2rem;">
-                            <label for="mathProblem1">وزن التوابل الصافي:</label>
-                            <input type="number" id="mathProblem1" placeholder="أدخل الإجابة بالكيلوغرام">
-                            <span>كيلوغرام</span>
+                        <p><b>الحل:</b></p>
+                        <div class="answer-display">
+                            <p>تحويل الأطنان إلى كيلوغرامات: 15 طن = 15000 كغ، 2 طن = 2000 كغ.</p>
+                            <p>الوزن الكلي للتوابل = 15000 كغ + 500 كغ = 15500 كغ.</p>
+                            <p>وزن العربة الفارغة = 2000 كغ + 750 كغ = 2750 كغ.</p>
+                            <p>وزن التوابل الصافي = الوزن الكلي للتوابل - وزن العربة الفارغة = 15500 كغ - 2750 كغ = <b>12750 كيلوغرام</b>.</p>
                         </div>
-
-                        <button class="btn" style="margin-top: 0.8rem;" onclick="checkMathProblem1()">تحقق من الحل</button>
-                        <div class="feedback" id="mathProblem1Feedback"></div>
                     </div>
 
                     <div class="interactive-box" style="margin-top: 1.5rem;">
                         <h4>مسألة 2: مزرعة التفاح</h4>
                         <p>لدى مزارع 365 شجرة تفاح. أنتجت كل شجرة 45 كيلوغرامًا من التفاح هذا الموسم. كم عدد الكيلوغرامات التي أنتجتها المزرعة كلها؟ وإذا باع المزارع التفاح بسعر 35 دينارًا للكيلوغرام الواحد، فكم سيجني من المال؟</p>
-
-                        <div style="margin-top: 1.2rem;">
-                            <label for="mathProblem2_totalWeight">الوزن الكلي للتفاح (كغ):</label>
-                            <input type="number" id="mathProblem2_totalWeight" placeholder="الوزن الكلي">
+                        <p><b>الحل:</b></p>
+                        <div class="answer-display">
+                            <p>الوزن الكلي للتفاح = عدد الأشجار × إنتاج الشجرة الواحدة = 365 × 45 = <b>16425 كيلوغرام</b>.</p>
+                            <p>المبلغ الإجمالي = الوزن الكلي للتفاح × سعر الكيلوغرام الواحد = 16425 × 35 = <b>574875 دينار</b>.</p>
                         </div>
-                        <div style="margin-top: 0.8rem;">
-                            <label for="mathProblem2_totalMoney">المبلغ الإجمالي (دينار):</label>
-                            <input type="number" id="mathProblem2_totalMoney" placeholder="المبلغ الإجمالي">
-                        </div>
-                        <button class="btn" style="margin-top: 0.8rem;" onclick="checkMathProblem2()">تحقق من الحل</button>
-                        <div class="feedback" id="mathProblem2Feedback"></div>
                     </div>
                 </div>
             </article>
@@ -851,39 +834,44 @@
             <article class="subject-card">
                 <div class="subject-content">
                     <h3>الهندسة: أبعاد الأشكال والزوايا</h3>
-                    <p>استكشف عالم الأشكال الهندسية وخصائصها الغامضة من خلال هذه التمارين العملية:</p>
+                    <p>استكشف عالم الأشكال الهندسية وخصائصها من خلال هذه التمارين العملية:</p>
 
                     <div class="interactive-box">
                         <h4>تمرين في الأشكال الهندسية: مساحة حقل</h4>
                         <p>حقل على شكل مستطيل، طوله 50 مترًا. إذا علمت أن عرضه يساوي نصف طوله، فما هي مساحة هذا الحقل؟</p>
-
-                        <div style="margin-top: 1.2rem;">
-                            <label for="rectangleArea">مساحة الحقل =</label>
-                            <input type="number" id="rectangleArea" placeholder="أدخل الإجابة بالمتر المربع">
-                            <span>متر مربع</span>
+                        <p><b>الحل:</b></p>
+                        <div class="answer-display">
+                            <p>الطول = 50 متر.</p>
+                            <p>العرض = نصف الطول = 50 / 2 = 25 متر.</p>
+                            <p>مساحة المستطيل = الطول × العرض = 50 × 25 = <b>1250 متر مربع</b>.</p>
                         </div>
-
-                        <button class="btn" style="margin-top: 0.8rem;" onclick="checkRectangleArea()">تحقق من الحل</button>
-                        <div class="feedback" id="rectangleAreaFeedback"></div>
                     </div>
 
                     <div class="interactive-box" style="margin-top: 1.5rem;">
                         <h4>تمرين في الأشكال الهندسية: محيط مثلث</h4>
                         <p>مثلث متساوي الأضلاع طول أحد أضلاعه 12 سم. ما هو محيط هذا المثلث؟</p>
-                        <div style="margin-top: 1.2rem;">
-                            <label for="trianglePerimeter">محيط المثلث =</label>
-                            <input type="number" id="trianglePerimeter" placeholder="أدخل الإجابة بالسنتيمتر">
-                            <span>سم</span>
+                        <p><b>الحل:</b></p>
+                        <div class="answer-display">
+                            <p>مثلث متساوي الأضلاع يعني أن جميع أضلاعه متساوية في الطول.</p>
+                            <p>محيط المثلث = طول الضلع × 3 = 12 × 3 = <b>36 سم</b>.</p>
                         </div>
-                        <button class="btn" style="margin-top: 0.8rem;" onclick="checkTrianglePerimeter()">تحقق من الحل</button>
-                        <div class="feedback" id="trianglePerimeterFeedback"></div>
+                    </div>
+
+                    <div class="interactive-box" style="margin-top: 1.5rem;">
+                        <h4>تمرين في الأشكال الهندسية: حجم مكعب</h4>
+                        <p>مكعب طول ضلعه 7 سم. ما هو حجم هذا المكعب؟</p>
+                        <p><b>الحل:</b></p>
+                        <div class="answer-display">
+                            <p>حجم المكعب = طول الضلع × طول الضلع × طول الضلع = الضلع³.</p>
+                            <p>الحجم = 7 × 7 × 7 = <b>343 سم³</b>.</p>
+                        </div>
                     </div>
                 </div>
             </article>
         </section>
 
         <section id="french">
-            <h2>Leçons de Français: Maîtriser la Langue de la Magie</h2>
+            <h2>Leçons de Français: Maîtriser la Langue de l'Aventure</h2>
 
             <article class="subject-card" style="margin-bottom: 2rem;">
                 <div class="subject-content">
@@ -891,98 +879,116 @@
                     <p>Lisez attentivement le texte suivant et répondez aux questions pour tester votre compréhension du français:</p>
 
                     <div class="interactive-box">
-                        <h4>Texte : Une Journée Magique à l'École</h4>
-                        <p>Le matin, les élèves de la cinquième année sont arrivés à l'école avec des étoiles dans les yeux. C'était la journée de la Magie et de l'Innovation. Madame Dubois, leur maîtresse, avait préparé des ateliers extraordinaires. Le premier atelier était dédié à la création de potions scintillantes. Les enfants mélangeaient des liquides colorés et des poudres mystérieuses, observant avec fascination les bulles et les vapeurs qui s'échappaient des chaudrons. Ensuite, ils ont participé à un cours de vol sur balai, même si ce n'était qu'un simulateur, l'excitation était palpable. Certains imaginaient déjà survoler des châteaux enchantés. L'après-midi, ils ont construit de petits robots qui dessinaient des symboles magiques et qui chantaient des mélodies joyeuses. Cette journée fut une expérience inoubliable, remplie de rires, de découvertes et d'une touche de véritable magie.</p>
+                        <h4>Texte : Une Journée Incroyable au Parc d'Attractions</h4>
+                        <p>Le matin, les élèves de la cinquième année sont arrivés au grand parc d'attractions avec des sourires éclatants. C'était la journée de la sortie scolaire annuelle! Madame Dubois, leur maîtresse, avait préparé un programme fantastique. Le premier arrêt était la grande roue, d'où ils pouvaient admirer tout le parc et la ville au loin. Ensuite, ils ont couru vers les montagnes russes, criant de joie à chaque descente et virage. L'après-midi, ils ont exploré la maison hantée (un peu effrayante, mais très amusante!) et ont participé à un spectacle de marionnettes rigolo. Ils ont aussi dégusté des glaces colorées et des barbes à papa géantes.</p>
+                        <p>Avant de partir, les élèves ont visité la boutique de souvenirs. Chacun a choisi un petit objet pour se rappeler de cette journée mémorable. Léa a acheté un porte-clés en forme de mini-montagnes russes, et Tom a opté pour un petit chapeau de magicien. Le trajet en bus pour le retour était rempli de chansons et de rires. Cette journée fut une expérience inoubliable, pleine d'excitation, de découvertes et de moments joyeux partagés entre amis.</p>
 
-                        <h4 style="margin-top: 1.5rem;">Questions:</h4>
+                        <h4 style="margin-top: 1.5rem;">Questions (Essayez de répondre par vous-même):</h4>
                         <ol style="text-align: right;">
-                            <li>Quelle était la journée spéciale à l'école?</li>
-                            <li>Quels ateliers Madame Dubois avait-elle préparés?</li>
-                            <li>Décrivez l'atelier de création de potions.</li>
-                            <li>Qu'ont fait les élèves l'après-midi?</li>
+                            <li>Où sont allés les élèves de la cinquième année?</li>
+                            <li>Qui était Madame Dubois?</li>
+                            <li>Quelles attractions ont-ils faites le matin?</li>
+                            <li>Décrivez ce qu'ils ont fait l'après-midi.</li>
+                            <li>Qu'ont-ils mangé au parc?</li>
+                            <li>Qu'est-ce que Léa et Tom ont acheté à la boutique de souvenirs?</li>
                             <li>Pourquoi cette journée était-elle inoubliable pour les élèves?</li>
                         </ol>
-
-                        <textarea style="width: 100%; min-height: 150px; padding: 0.8rem; border: 1px solid var(--hp-silver); border-radius: 5px;" placeholder="Répondez aux questions ici..."></textarea>
-                        <button class="btn" style="margin-top: 0.8rem;">Vérifier les réponses</button>
+                        <textarea style="width: 100%; min-height: 150px; padding: 0.8rem; border: 1px solid var(--st-green); border-radius: 5px;" placeholder="Répondez aux questions ici..."></textarea>
+                        <p style="text-align: center; color: var(--st-blue);">*Pensez à vos réponses et comparez-les au texte! Il n'y a pas de bouton de vérification dans cette démo.</p>
                     </div>
                 </div>
             </article>
 
             <article class="subject-card">
                 <div class="subject-content">
-                    <h3>Grammaire Française: La Conjugaison des Verbes</h3>
+                    <h3>Grammaire Française: La Conjugaison des Verbes Essentiels</h3>
                     <p>Perfectionnez votre français en maîtrisant la conjugaison des verbes essentiels au présent de l'indicatif. C'est la clé pour construire des phrases correctes et fluides!</p>
 
                     <div class="interactive-box">
                         <h4>Conjugaison du verbe "être" au présent:</h4>
                         <div style="margin-top: 1.2rem;">
                             <label>Je</label>
-                            <input type="text" id="etre_je" data-answer="suis" placeholder="suis">
+                            <div class="answer-display">suis</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>Tu</label>
-                            <input type="text" id="etre_tu" data-answer="es" placeholder="es">
+                            <div class="answer-display">es</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>Il/Elle/On</label>
-                            <input type="text" id="etre_il" data-answer="est" placeholder="est">
+                            <div class="answer-display">est</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>Nous</label>
-                            <input type="text" id="etre_nous" data-answer="sommes" placeholder="sommes">
+                            <div class="answer-display">sommes</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>Vous</label>
-                            <input type="text" id="etre_vous" data-answer="êtes" placeholder="êtes">
+                            <div class="answer-display">êtes</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>Ils/Elles</label>
-                            <input type="text" id="etre_ils" data-answer="sont" placeholder="sont">
+                            <div class="answer-display">sont</div>
                         </div>
-                        <button class="btn" style="margin-top: 1.5rem;" onclick="checkFrenchConjugationEtre()">Vérifier la conjugaison</button>
-                        <div class="feedback" id="frenchConjugationEtreFeedback"></div>
                     </div>
 
                     <div class="interactive-box" style="margin-top: 1.5rem;">
                         <h4>Conjugaison du verbe "avoir" au présent:</h4>
                         <div style="margin-top: 1.2rem;">
                             <label>J'</label>
-                            <input type="text" id="avoir_je" data-answer="ai" placeholder="ai">
+                            <div class="answer-display">ai</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>Tu</label>
-                            <input type="text" id="avoir_tu" data-answer="as" placeholder="as">
+                            <div class="answer-display">as</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>Il/Elle/On</label>
-                            <input type="text" id="avoir_il" data-answer="a" placeholder="a">
+                            <div class="answer-display">a</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>Nous</label>
-                            <input type="text" id="avoir_nous" data-answer="avons" placeholder="avons">
+                            <div class="answer-display">avons</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>Vous</label>
-                            <input type="text" id="avoir_vous" data-answer="avez" placeholder="avez">
+                            <div class="answer-display">avez</div>
                         </div>
                         <div style="margin-top: 0.8rem;">
                             <label>Ils/Elles</label>
-                            <input type="text" id="avoir_ils" data-answer="ont" placeholder="ont">
+                            <div class="answer-display">ont</div>
                         </div>
-                        <button class="btn" style="margin-top: 1.5rem;" onclick="checkFrenchConjugationAvoir()">Vérifier la conjugaison</button>
-                        <div class="feedback" id="frenchConjugationAvoirFeedback"></div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="subject-card" style="margin-top: 2rem;">
+                <div class="subject-content">
+                    <h3>Vocabulaire: Les Couleurs</h3>
+                    <p>Apprenez les noms des couleurs en français pour décrire le monde qui vous entoure!</p>
+                    <div class="interactive-box">
+                        <h4>Faites correspondre les couleurs:</h4>
+                        <ul style="text-align: right; list-style-type: none; padding: 0;">
+                            <li>Bleu: Couleur du ciel et de la mer.</li>
+                            <li>Rouge: Couleur des pommes et des fraises.</li>
+                            <li>Jaune: Couleur du soleil et des citrons.</li>
+                            <li>Vert: Couleur de l'herbe et des arbres.</li>
+                            <li>Noir: Couleur de la nuit.</li>
+                            <li>Blanc: Couleur de la neige.</li>
+                        </ul>
+                        <p><b>Exercice:</b> Décrivez votre tenue préférée en utilisant au moins trois couleurs en français.</p>
+                        <textarea style="width: 100%; min-height: 100px; padding: 0.8rem; border: 1px solid var(--st-green); border-radius: 5px;" placeholder="Écrivez votre description ici..."></textarea>
                     </div>
                 </div>
             </article>
         </section>
     </main>
 
-    <section id="about" style="background-color: var(--hp-light-gray); padding: 3rem 0; border-top: 4px solid var(--hp-gold);">
+    <section id="about" style="background-color: var(--st-light-bg); padding: 3rem 0; border-top: 4px solid var(--st-yellow);">
         <div class="container">
-            <h2 style="color: var(--hp-darkblue); text-align: center;">عن منصة العلّامة رؤوف: سحر التعلم</h2>
+            <h2 style="color: var(--st-blue); text-align: center;">عن منصة العلّامة رؤوف: متعة التعلم</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">
-                منصة العلّامة رؤوف هي بوابتك السحرية إلى عالم التعليم الممتع. صُممت هذه المنصة الإلكترونية المتكاملة خصيصاً لتلاميذ السنة الخامسة ابتدائي، معتمدة على المنهج الدراسي الرسمي ولكن بلمسة سحرية من الأنشطة التفاعلية والتمارين المشوقة لجعل عملية التعلم أكثر جاذبية وفعالية.
+                منصة العلّامة رؤوف هي بوابتك إلى عالم التعليم الممتع. صُممت هذه المنصة الإلكترونية المتكاملة خصيصاً لتلاميذ السنة الخامسة ابتدائي، معتمدة على المنهج الدراسي الرسمي ولكن بلمسة من الأنشطة التفاعلية والتمارين المشوقة لجعل عملية التعلم أكثر جاذبية وفعالية.
                 <br><br>
                 هدفنا هو إشعال شرارة الفضول في نفوس أطفالنا الأعزاء، وتقديم محتوى تعليمي عالي الجودة، وشروحات واضحة، وتمارين مبتكرة تغطي جميع المواد الدراسية، لدعمهم في رحلتهم التعليمية وتمكينهم من تحقيق أقصى إمكاناتهم الأكاديمية.
             </p>
@@ -993,18 +999,18 @@
         <div class="footer-links">
             <a href="#home">الرئيسية</a>
             <a href="#subjects">المواد الدراسية</a>
-            <a href="#activities">الأنشطة السحرية</a>
-            <a href="#downloads">قاعة التحميلات</a>
+            <a href="#activities">الأنشطة المرحة</a>
+            <a href="#downloads">مكتبة الملفات</a>
             <a href="#about">عن المنصة</a>
-            <a href="#" id="contactBtn">اتصل بنا</a>
+            <a href="#" id="contactBtn">تواصل معنا</a>
         </div>
-        <p>جميع الحقوق محفوظة &copy; 2025 منصة العلّامة رؤوف. كل السحر يعود إلينا.</p>
+        <p>جميع الحقوق محفوظة &copy; 2025 منصة العلّامة رؤوف. نتمنى لكم يوماً تعليمياً ممتعاً!</p>
     </footer>
 
     <div id="contactModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h2>اتصل بنا: مراسلة بومة بريدية</h2>
+            <h2>تواصل معنا</h2>
             <form style="margin-top: 1.5rem;">
                 <div>
                     <label for="contactName">الاسم الكامل:</label>
@@ -1013,308 +1019,38 @@
 
                 <div>
                     <label for="contactEmail">البريد الإلكتروني:</label>
-                    <input type="email" id="contactEmail" placeholder="example@owlpost.com" required>
+                    <input type="email" id="contactEmail" placeholder="example@email.com" required>
                 </div>
 
                 <div>
-                    <label for="contactMessage">رسالتك السحرية:</label>
+                    <label for="contactMessage">رسالتك:</label>
                     <textarea id="contactMessage" placeholder="اكتب رسالتك..." required></textarea>
                 </div>
 
-                <button type="submit" class="btn">أرسل البومة</button>
+                <button type="submit" class="btn">إرسال</button>
             </form>
+            <p style="font-size: 0.9em; color: var(--st-gray-text); margin-top: 1rem;">*ملاحظة: هذا النموذج هو للعرض التوضيحي فقط ولا يقوم بإرسال البيانات فعلياً.</p>
         </div>
     </div>
 
     <div id="downloadModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h2>تحميل الدروس السحرية</h2>
-            <p>اختر مجموعة المخطوطات التي تود تحميلها:</p>
+            <h2>تحميل الدروس</h2>
+            <p>اختر مجموعة الملفات التي تود تحميلها:</p>
 
             <div style="margin-top: 1.5rem;">
                 <a href="/downloads/arabic_lessons.pdf" class="btn download-btn-modal" style="display: block; text-align: center; margin-bottom: 1rem;" download>تحميل دروس اللغة العربية</a>
                 <a href="/downloads/math_lessons.pdf" class="btn download-btn-modal" style="display: block; text-align: center; margin-bottom: 1rem;" download>تحميل دروس الرياضيات</a>
                 <a href="/downloads/french_lessons.pdf" class="btn download-btn-modal" style="display: block; text-align: center; margin-bottom: 1rem;" download>تحميل دروس اللغة الفرنسية</a>
-                <a href="/downloads/all_lessons.pdf" class="btn download-btn-modal" style="display: block; text-align: center; background-color: var(--hp-darkblue); border-color: var(--hp-gold);" download>تحميل جميع المخطوطات</a>
+                <a href="/downloads/all_lessons.pdf" class="btn download-btn-modal" style="display: block; text-align: center; background-color: var(--st-purple); border-color: var(--st-yellow);" download>تحميل جميع الملفات</a>
             </div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Helper function to show feedback
-            function showFeedback(elementId, message, isCorrect) {
-                const feedbackElement = document.getElementById(elementId);
-                feedbackElement.textContent = message;
-                feedbackElement.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
-            }
-
-            // Arabic Order Exercise (Drag and Drop - Simplified Check)
-            const arabicOrderExerciseDiv = document.getElementById('arabicOrderExercise');
-            let draggedItem = null;
-
-            if (arabicOrderExerciseDiv) {
-                arabicOrderExerciseDiv.addEventListener('dragstart', (e) => {
-                    draggedItem = e.target;
-                    e.dataTransfer.setData('text/plain', e.target.dataset.order); // Store original order
-                    e.dataTransfer.effectAllowed = 'move';
-                });
-
-                arabicOrderExerciseDiv.addEventListener('dragover', (e) => {
-                    e.preventDefault(); // Allow drop
-                    const target = e.target;
-                    if (target.classList.contains('quiz-option') && target !== draggedItem) {
-                        const bounding = target.getBoundingClientRect();
-                        const offset = bounding.y + (bounding.height / 2);
-                        if (e.clientY < offset) {
-                            arabicOrderExerciseDiv.insertBefore(draggedItem, target);
-                        } else {
-                            arabicOrderExerciseDiv.insertBefore(draggedItem, target.nextSibling);
-                        }
-                    }
-                });
-
-                arabicOrderExerciseDiv.addEventListener('drop', (e) => {
-                    e.preventDefault();
-                    // Drop handled by dragover for visual reordering.
-                });
-
-                arabicOrderExerciseDiv.addEventListener('dragend', () => {
-                    draggedItem = null;
-                });
-            }
-
-            window.checkOrder = function() {
-                const orderedElements = Array.from(arabicOrderExerciseDiv.children);
-                const currentOrder = orderedElements.map(el => parseInt(el.dataset.order, 10));
-                const expectedOrder = [1, 2, 3, 4]; // Based on data-order attributes
-
-                const isCorrect = JSON.stringify(currentOrder) === JSON.stringify(expectedOrder);
-                const feedbackDiv = document.createElement('div');
-                feedbackDiv.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
-                feedbackDiv.textContent = isCorrect ? 'أحسنت! الترتيب صحيح.' : 'الترتيب خاطئ، حاول مرة أخرى.';
-
-                const existingFeedback = arabicOrderExerciseDiv.parentElement.querySelector('.feedback');
-                if (existingFeedback) {
-                    existingFeedback.remove();
-                }
-                arabicOrderExerciseDiv.parentElement.appendChild(feedbackDiv);
-            };
-
-            // Math Answer Check (Area of Rectangle)
-            window.checkMathAnswer = function() {
-                const answer = parseFloat(document.getElementById('mathAnswer').value);
-                const correctAnswer = 15 * 8; // Length 15, Width 8
-                const isCorrect = answer === correctAnswer;
-                showFeedback('mathFeedback', isCorrect ? `إجابة صحيحة! مساحة الحديقة هي ${correctAnswer} متر مربع.` : `إجابة خاطئة. تذكر أن مساحة المستطيل = الطول × العرض. حاول مرة أخرى.`, isCorrect);
-            };
-
-            // French Multiple Choice Answer Check
-            window.checkFrenchAnswer = function(element, type) {
-                const options = element.parentElement.querySelectorAll('.quiz-option');
-                options.forEach(opt => {
-                    opt.classList.remove('correct', 'incorrect');
-                });
-
-                const isCorrect = (type === 'correct');
-                element.classList.add(isCorrect ? 'correct' : 'incorrect');
-                showFeedback('frenchFeedback', isCorrect ? `إجابة صحيحة! "sont" هو التصريف الصحيح للفعل "être" مع "Les élèves".` : `إجابة خاطئة. تذكر أن "sont" هو التصريف الصحيح للفعل "être" مع الجمع الغائب.`, isCorrect);
-            };
-
-            // Vocabulary Match (Drag and Drop - Simplified Feedback)
-            let draggedWord = null;
-
-            document.querySelectorAll('.draggable-word').forEach(word => {
-                word.addEventListener('dragstart', (e) => {
-                    draggedWord = e.target;
-                    e.dataTransfer.setData('text/plain', e.target.dataset.word);
-                    e.dataTransfer.effectAllowed = 'move';
-                });
-            });
-
-            document.getElementById('meaningsContainer').addEventListener('dragover', (e) => {
-                e.preventDefault();
-            });
-
-            document.getElementById('meaningsContainer').addEventListener('drop', (e) => {
-                e.preventDefault();
-                const data = e.dataTransfer.getData('text/plain');
-                const targetMeaningDiv = e.target.closest('.meaning-target');
-
-                if (targetMeaningDiv && draggedWord) {
-                    // In a real application, you'd check if `data` matches `targetMeaningDiv.dataset.meaning`
-                    // For this example, we just move it visually and give a generic message.
-                    if (!targetMeaningDiv.querySelector('.draggable-word')) { // Only drop if target is empty
-                        targetMeaningDiv.appendChild(draggedWord);
-                        draggedWord = null;
-                        document.getElementById('vocabularyFeedback').textContent = 'تم إسقاط الكلمة. اضغط على "تحقق من المطابقة" للنتيجة.';
-                        document.getElementById('vocabularyFeedback').className = 'feedback correct'; // Temporarily green
-                    } else {
-                        document.getElementById('vocabularyFeedback').textContent = 'هذه الخانة ممتلئة. اسحب الكلمة إلى خانة فارغة.';
-                        document.getElementById('vocabularyFeedback').className = 'feedback incorrect';
-                    }
-                }
-            });
-
-            window.checkVocabularyMatch = function() {
-                const words = Array.from(document.querySelectorAll('.draggable-word'));
-                const meanings = Array.from(document.querySelectorAll('.meaning-target'));
-                let allCorrect = true;
-
-                words.forEach(wordElement => {
-                    const parentMeaning = wordElement.closest('.meaning-target');
-                    if (parentMeaning) {
-                        const wordText = wordElement.dataset.word;
-                        const meaningText = parentMeaning.dataset.meaning;
-
-                        // Basic check (this would be more robust with a predefined map in a real app)
-                        if ((wordText === 'شجاع' && meaningText === 'لا يخاف، جريء') ||
-                            (wordText === 'مشرق' && meaningText === 'لامع، مضيء')) {
-                            wordElement.classList.add('correct');
-                            wordElement.classList.remove('incorrect');
-                        } else {
-                            wordElement.classList.add('incorrect');
-                            wordElement.classList.remove('correct');
-                            allCorrect = false;
-                        }
-                    } else {
-                        allCorrect = false; // Word not dropped
-                    }
-                });
-
-                if (allCorrect && words.length === meanings.length) { // Ensure all words are placed and correctly
-                    showFeedback('vocabularyFeedback', 'مذهل! كل الكلمات مطابقة بشكل صحيح!', true);
-                } else {
-                    showFeedback('vocabularyFeedback', 'توجد بعض الأخطاء في المطابقة، حاول مرة أخرى.', false);
-                }
-            };
-
-
-            // Math Problem 1 Check
-            window.checkMathProblem1 = function() {
-                const answer = parseFloat(document.getElementById('mathProblem1').value);
-                // 15 tons = 15000 kg, 500 kg -> 15500 kg
-                // 2 tons = 2000 kg, 750 kg -> 2750 kg
-                const correctAnswer = 15500 - 2750; // Total spice - empty cart weight
-                const isCorrect = answer === correctAnswer;
-                showFeedback('mathProblem1Feedback', isCorrect ? `إجابة صحيحة! وزن التوابل الصافي هو ${correctAnswer} كيلوغرام.` : `إجابة خاطئة. تذكر أن وزن التوابل الصافي = الوزن الكلي - وزن العربة الفارغة. (1 طن = 1000 كغ)`, isCorrect);
-            };
-
-            // Math Problem 2 Check
-            window.checkMathProblem2 = function() {
-                const totalWeightInput = parseFloat(document.getElementById('mathProblem2_totalWeight').value);
-                const totalMoneyInput = parseFloat(document.getElementById('mathProblem2_totalMoney').value);
-
-                const totalApplesWeight = 365 * 45;
-                const totalMoneyEarned = totalApplesWeight * 35;
-
-                const isWeightCorrect = totalWeightInput === totalApplesWeight;
-                const isMoneyCorrect = totalMoneyInput === totalMoneyEarned;
-
-                if (isWeightCorrect && isMoneyCorrect) {
-                    showFeedback('mathProblem2Feedback', `إجابة صحيحة! الوزن الكلي للتفاح: ${totalApplesWeight} كغ. المبلغ الإجمالي: ${totalMoneyEarned} دينار.`, true);
-                } else if (isWeightCorrect && !isMoneyCorrect) {
-                    showFeedback('mathProblem2Feedback', `وزن التفاح الكلي صحيح (${totalApplesWeight} كغ)، لكن حساب المبلغ خاطئ.`, false);
-                } else if (!isWeightCorrect && isMoneyCorrect) {
-                    showFeedback('mathProblem2Feedback', `حساب المبلغ الإجمالي صحيح (${totalMoneyEarned} دينار)، لكن وزن التفاح الكلي خاطئ.`, false);
-                } else {
-                    showFeedback('mathProblem2Feedback', 'إجابتان خاطئتان، حاول مرة أخرى.', false);
-                }
-            };
-
-
-            // Rectangle Area Check
-            window.checkRectangleArea = function() {
-                const answer = parseFloat(document.getElementById('rectangleArea').value);
-                const length = 50;
-                const width = length / 2; // Half the length
-                const correctAnswer = length * width; // Area = length * width
-                const isCorrect = answer === correctAnswer;
-                showFeedback('rectangleAreaFeedback', isCorrect ? `إجابة صحيحة! مساحة الحقل هي ${correctAnswer} متر مربع.` : `إجابة خاطئة. تذكر أن العرض هو نصف الطول، ثم المساحة = الطول × العرض.`, isCorrect);
-            };
-
-            // Triangle Perimeter Check
-            window.checkTrianglePerimeter = function() {
-                const answer = parseFloat(document.getElementById('trianglePerimeter').value);
-                const sideLength = 12;
-                const correctAnswer = sideLength * 3; // Equilateral triangle perimeter
-                const isCorrect = answer === correctAnswer;
-                showFeedback('trianglePerimeterFeedback', isCorrect ? `إجابة صحيحة! محيط المثلث هو ${correctAnswer} سم.` : `إجابة خاطئة. تذكر أن محيط المثلث متساوي الأضلاع = طول الضلع × 3.`, isCorrect);
-            };
-
-
-            // Arabic Grammar Check (Simplified)
-            window.checkArabicGrammar = function() {
-                const inputs = document.querySelectorAll('#arabic .interactive-box input[type="text"]');
-                let allCorrect = true;
-                inputs.forEach(input => {
-                    const expectedAnswer = input.dataset.answer;
-                    const userAnswer = input.value.trim();
-                    if (userAnswer === expectedAnswer) {
-                        input.style.borderColor = '#28a745'; // Green
-                    } else {
-                        input.style.borderColor = '#dc3545'; // Red
-                        allCorrect = false;
-                    }
-                });
-                showFeedback('arabicGrammarFeedback', allCorrect ? 'تهانينا! جميع الإعرابات صحيحة.' : 'توجد بعض الأخطاء في الإعراب، راجع إجاباتك.', allCorrect);
-            };
-
-            // French Conjugation 'être' Check
-            window.checkFrenchConjugationEtre = function() {
-                const conjugations = {
-                    'etre_je': 'suis',
-                    'etre_tu': 'es',
-                    'etre_il': 'est',
-                    'etre_nous': 'sommes',
-                    'etre_vous': 'êtes',
-                    'etre_ils': 'sont'
-                };
-                let allCorrect = true;
-                for (const id in conjugations) {
-                    const input = document.getElementById(id);
-                    if (input) {
-                        const userAnswer = input.value.trim().toLowerCase();
-                        if (userAnswer === conjugations[id]) {
-                            input.style.borderColor = '#28a745';
-                        } else {
-                            input.style.borderColor = '#dc3545';
-                            allCorrect = false;
-                        }
-                    }
-                }
-                showFeedback('frenchConjugationEtreFeedback', allCorrect ? 'Félicitations! Toutes les conjugaisons sont correctes.' : 'Il y a des erreurs dans la conjugaison, réessayez.', allCorrect);
-            };
-
-            // French Conjugation 'avoir' Check
-            window.checkFrenchConjugationAvoir = function() {
-                const conjugations = {
-                    'avoir_je': 'ai',
-                    'avoir_tu': 'as',
-                    'avoir_il': 'a',
-                    'avoir_nous': 'avons',
-                    'avoir_vous': 'avez',
-                    'avoir_ils': 'ont'
-                };
-                let allCorrect = true;
-                for (const id in conjugations) {
-                    const input = document.getElementById(id);
-                    if (input) {
-                        const userAnswer = input.value.trim().toLowerCase();
-                        if (userAnswer === conjugations[id]) {
-                            input.style.borderColor = '#28a745';
-                        } else {
-                            input.style.borderColor = '#dc3545';
-                            allCorrect = false;
-                        }
-                    }
-                }
-                showFeedback('frenchConjugationAvoirFeedback', allCorrect ? 'Félicitations! Toutes les conjugaisons sont correctes.' : 'Il y a des erreurs dans la conjugaison, réessayez.', allCorrect);
-            };
-
-
-            // Modal functionality
+            // Modal functionality (basic display only, no form submission)
             const contactBtn = document.getElementById('contactBtn');
             const contactModal = document.getElementById('contactModal');
             const downloadPdfBtn = document.getElementById('downloadPdfBtn');
