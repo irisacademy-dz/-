@@ -3,497 +3,837 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موسوعة العلّامة رؤوف</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>منصة العلّامة رؤوف للسنة الخامسة ابتدائي</title>
     <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
         body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f8f9fa; /* Light grey background */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
         }
-        .sidebar {
-            background-color: #3498db; /* Blue */
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            transition: transform 0.3s ease-in-out;
-        }
-        .sidebar.hidden {
-            transform: translateX(100%); /* Hide sidebar to the right for RTL */
-        }
-        @media (min-width: 768px) {
-            .sidebar.hidden {
-                transform: translateX(0); /* Always show on desktop */
-            }
-        }
-        .sidebar a {
-            display: block;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            margin-bottom: 0.5rem;
-            transition: background-color 0.2s ease;
-        }
-        .sidebar a:hover, .sidebar a.active {
-            background-color: #2980b9; /* Darker blue on hover/active */
-        }
-        .content-area {
-            background-color: #ffffff;
-            border-radius: 1rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-        .quiz-option {
-            background-color: #ecf0f1; /* Light grey for options */
-            border: 1px solid #bdc3c7;
-            border-radius: 0.5rem;
-            padding: 0.75rem 1rem;
-            margin-bottom: 0.75rem;
-            cursor: pointer;
-            transition: background-color 0.2s ease, border-color 0.2s ease;
-        }
-        .quiz-option:hover {
-            background-color: #dde1e2;
-        }
-        .quiz-option.correct {
-            background-color: #d4edda; /* Light green */
-            border-color: #28a745; /* Green */
-        }
-        .quiz-option.incorrect {
-            background-color: #f8d7da; /* Light red */
-            border-color: #dc3545; /* Red */
-        }
-        .message-box {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
+            padding: 1rem;
             text-align: center;
-            max-width: 90%;
-            display: none; /* Hidden by default */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .message-box button {
-            background-color: #3498db;
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: var(--dark-color);
+            padding: 0.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            margin-top: 1rem;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
-        .message-box button:hover {
-            background-color: #2980b9;
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .hero {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .hero h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .subject-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .subject-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .subject-content {
+            padding: 1.5rem;
+        }
+        
+        .subject-content h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .subject-content p {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #27ae60;
+        }
+        
+        .activities {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .activities h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--light-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .activity-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .activity-card h4 {
+            color: var(--dark-color);
+            margin-top: 0;
+        }
+        
+        .activity-card p {
+            color: #555;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .download-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .download-section h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .download-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Interactive elements */
+        .interactive-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .interactive-box h4 {
+            margin-top: 0;
+            color: var(--dark-color);
+        }
+        
+        .quiz-option {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .quiz-option:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .quiz-option.correct {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        
+        .quiz-option.incorrect {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        
+        .feedback {
+            padding: 0.8rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 700px;
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+        }
+        
+        .close-btn:hover {
+            color: #333;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .subjects {
+                grid-template-columns: 1fr;
+            }
+            
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
-
-    <header class="bg-gradient-to-r from-blue-500 to-teal-500 text-white p-4 shadow-lg rounded-b-xl">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-bold">موسوعة العلّامة رؤوف</h1>
-            <button id="menu-toggle" class="md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-white">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </div>
+<body>
+    <header>
+        <div class="logo">منصة العلّامة رؤوف</div>
+        <div class="tagline">بوابة التعلم التفاعلي للسنة الخامسة ابتدائي</div>
     </header>
-
-    <div class="flex flex-1 container mx-auto my-6 p-4 md:p-6">
-        <aside id="sidebar" class="sidebar fixed inset-y-0 right-0 w-64 md:relative md:w-64 p-4 md:p-0 md:flex-shrink-0 z-40 md:z-auto rounded-l-xl md:rounded-none hidden md:block">
-            <h2 class="text-2xl font-bold mb-4 text-center">المقاطع</h2>
-            <nav id="main-nav">
-                </nav>
-        </aside>
-
-        <main id="content-display" class="flex-1 p-6 md:mr-6 content-area">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">مرحباً بك في موسوعة العلّامة رؤوف!</h2>
-            <p class="text-lg text-gray-700 leading-relaxed text-center">
-                هنا ستجد محتوى غنياً وأنشطة تفاعلية لمساعدتك على فهم دروس اللغة العربية والاستعداد للامتحانات.
-                اختر مقطعاً أو وحدة من القائمة الجانبية للبدء في رحلتك التعليمية الممتعة.
-            </p>
-            <div class="mt-8 text-center">
-                <img src="https://placehold.co/400x250/3498db/ffffff?text=مرحباً+بك" alt="Welcome Image" class="mx-auto rounded-lg shadow-md">
-            </div>
-        </main>
-    </div>
-
-    <div id="message-box" class="message-box">
-        <p id="message-text" class="text-xl font-semibold text-gray-800"></p>
-        <button id="message-ok-button">حسناً</button>
-    </div>
-
-    <footer class="bg-gray-800 text-white p-4 mt-auto rounded-t-xl">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2023 موسوعة العلّامة رؤوف. جميع الحقوق محفوظة.</p>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#subjects">المواد الدراسية</a></li>
+            <li><a href="#activities">الأنشطة</a></li>
+            <li><a href="#downloads">التحميلات</a></li>
+            <li><a href="#about">عن المنصة</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container" id="home">
+        <div class="hero">
+            <h1>مرحباً بكم في منصة العلّامة رؤوف</h1>
+            <p>منصة تعليمية شاملة وممتعة تحتوي على جميع الدروس والتمارين للسنة الخامسة ابتدائي. استمتع بتجربة تعلم تفاعلية مع أنشطة ممتعة وتمارين مسلية!</p>
+            <a href="#subjects" class="btn">ابدأ الرحلة التعليمية</a>
         </div>
-    </footer>
-
-    <script>
-        // Global variables for Firebase (not used in this version, but kept for future expansion)
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-
-        // Function to show custom message box instead of alert/confirm
-        function showMessageBox(message, callback) {
-            const msgBox = document.getElementById('message-box');
-            const msgText = document.getElementById('message-text');
-            const okButton = document.getElementById('message-ok-button');
-
-            msgText.textContent = message;
-            msgBox.style.display = 'block';
-
-            okButton.onclick = () => {
-                msgBox.style.display = 'none';
-                if (callback) callback();
-            };
-        }
-
-        // Dummy content structure based on the PDF
-        const encyclopediaContent = {
-            "القيم الإنسانية": {
-                "الوحدة الأولى: مع عصاي في المدرسة": {
-                    text: `
-                        <h3 class="text-2xl font-semibold mb-3 text-blue-700">مع عصاي في المدرسة</h3>
-                        <p class="mb-4 leading-relaxed">رافقني أبي إلى المدرسة حيث استقبلنا المدير بكثير من اللطف، فقال أبي: "سيدي المدير، هذه ابنتي رجاء، هي كما ترى... فشكرا وجزاك الله خيرا".</p>
-                        <p class="mb-4 leading-relaxed">ولدى خروجنا عرج بي أبي إلى حجرة القسم، فوجدت نفسي وسط حشد هائل لا أعرفه، جلست على مقعد خشبي، ثم تبين لي أن عصاي ليس لها مكان، إن أوقفتها ستتراءى كراية تثير الانتباه، وإن وضعتها على حافة مقعدي على طول الممر الضيق، ستعوق الذهاب والإياب، ثم لاح لي أن أدخلها عبر فجوات المقعد، وأنا أهتم بذلك، إذا بالعصا ترتطم بالمقعد، فتحدث صوتا فاجعا، فانقلبت الأنظار إلي، وسمعت خطوات المدرس، وما أراه إلا واقفا أمامي. انشطرت ضفعة جراء عملي، إلا أن المدرس لم يفعله، بل أمرني برفع رأسي، فرأيته باسما، ثم انحنى حيث العصا فأخذها ووضعها على طول مقعدي في الجهة السفلى، وقال بصوت هادئ: "لا عليك! فهذا موضعها اللائق، ومنه يتيسر عليك الاعتماد عليها كلما دعت الحاجة".</p>
-                        <p class="text-sm text-gray-600 mt-4"> - جابري محمد - بتصرف</p>
-                    `,
-                    activities: [
-                        {
-                            type: "quiz",
-                            question: "ما هي الكلمة التي تعبر عن النسبة في جملة 'هذا شِعارُ جَمْعِيَّةِ الْهِلَالِ الْأَحْمَرِ الْجَزَائِرِي'؟",
-                            options: ["شعار", "جمعية", "الهلال", "الجزائري"],
-                            correct: "الجزائري",
-                            explanation: "الكلمة 'الجزائري' هي اسم نسبة يدل على الانتماء إلى الجزائر."
-                        },
-                        {
-                            type: "quiz",
-                            question: "ماذا طلب الأب من المدير بخصوص ابنته رجاء؟",
-                            options: ["تسجيلها في المدرسة", "توفير مقعد خاص لها", "مساعدتها في حمل عصاها", "لا شيء مما ذكر"],
-                            correct: "تسجيلها في المدرسة",
-                            explanation: "الأب رافق ابنته إلى المدرسة لتسجيلها."
-                        },
-                        {
-                            type: "text",
-                            title: "ألفاظ النسبة",
-                            content: `
-                                <p class="mb-2">ألفاظ النسبة هي كلمات تُضاف إليها ياء مشددة مكسور ما قبلها للدلالة على الانتماء أو الصفة. مثل: مَدْرَسِيّ (من مدرسة)، خَشَبِيّ (من خشب)، جَزَائِرِيّ (من الجزائر).</p>
-                                <p class="mb-2"><b>مثال:</b> هذا كتاب <b>مَدْرَسِيّ</b>. (الكتاب ينتمي إلى المدرسة)</p>
-                                <p class="mb-2"><b>مثال:</b> هذه عصا <b>خَشَبِيَّة</b>. (العصا مصنوعة من الخشب)</p>
-                            `
-                        }
-                    ]
-                },
-                "الوحدة الثانية: ماسح الزجاج": {
-                    text: `
-                        <h3 class="text-2xl font-semibold mb-3 text-blue-700">ماسح الزجاج</h3>
-                        <p class="mb-4 leading-relaxed">تُرى وجهه يوميًا في الشوارع المزدحمة... أمام زجاج سيارتك... و أنت وراء المقود، يتراخى سيارتك المشغولة، لا تقوى على القرار، و أنت العالق في أزمة السير، يمسح بطولته، زجاج السيارة الأمامي بسرعة فائقة وبراعة خارقة، مهمته مسح زجاج كل سيارة عابرة.</p>
-                        <p class="mb-4 leading-relaxed">ترجو هناك يخضّت أن تؤدي له أجرًا لقاء أتعاب لم تشغل القيام بها. لا يلح في طلب، ولا يُرهقك بسؤال. كثيرون يتأففون منه ولا يعطونه شيئًا، فلا يُبدي غضبا ولا عداوة. و القابلون منهم يعطونه من قطع النقد الصغيرة، ابتسامته الساحرة لا تفارق شفتيه، يزيد على عطاء من أعطيه بكلمات شكر محفوظة.</p>
-                        <p class="text-sm text-gray-600 mt-4"> - إدوارد وهبه - بتصرف</p>
-                    `,
-                    activities: [
-                        {
-                            type: "quiz",
-                            question: "ما هو شعور ماسح الزجاج عندما لا يعطيه الناس شيئًا؟",
-                            options: ["يغضب", "يحزن", "لا يبدي غضباً ولا عداوة", "يبتسم"],
-                            correct: "لا يبدي غضباً ولا عداوة",
-                            explanation: "النص يذكر أنه 'لا يبدي غضبا ولا عداوة' حتى عندما لا يعطونه شيئًا."
-                        },
-                        {
-                            type: "text",
-                            title: "الفعل الماضي",
-                            content: `
-                                <p class="mb-2">الفعل الماضي هو فعل يدل على حدث وقع وانتهى في الزمن الماضي. مثل: <b>درس</b>، <b>كتب</b>، <b>لعب</b>.</p>
-                                <p class="mb-2"><b>مثال:</b> <b>دخل</b> التلاميذ القسم. (فعل ماضٍ)</p>
-                                <p class="mb-2"><b>مثال:</b> <b>مسح</b> الولد الزجاج. (فعل ماضٍ)</p>
-                            `
-                        }
-                    ]
-                }
-            },
-            "الحياة الإجتماعية": {
-                "الوحدة الأولى: التاجماعت": {
-                    text: `
-                        <h3 class="text-2xl font-semibold mb-3 text-blue-700">التاجماعت</h3>
-                        <p class="mb-4 leading-relaxed">التاجماعت هو مجلس محلي في منطقة القبائل بالجزائر، يضم شيوخ القرية ووجهاءها. يجتمعون لحل مشاكل القرية وتسيير شؤونها.</p>
-                        <p class="mb-4 leading-relaxed">تُعد التاجماعت رمزاً للتضامن والتعاون بين أفراد المجتمع، حيث يساهم الجميع في بناء القرية وحل النزاعات وتوفير المساعدة للمحتاجين.</p>
-                    `,
-                    activities: [
-                        {
-                            type: "quiz",
-                            question: "ما هي وظيفة 'التاجماعت' الرئيسية؟",
-                            options: ["التعليم", "الزراعة", "حل المشاكل وتسيير شؤون القرية", "التجارة"],
-                            correct: "حل المشاكل وتسيير شؤون القرية",
-                            explanation: "'التاجماعت' هي مجلس محلي يحل مشاكل القرية ويسير شؤونها."
-                        }
-                    ]
-                }
-            }
-            // More sections and units would go here
-        };
-
-        // Function to render content
-        function renderContent(unitData) {
-            const contentDisplay = document.getElementById('content-display');
-            contentDisplay.innerHTML = `
-                <div class="p-6">
-                    ${unitData.text}
-                    <hr class="my-6 border-gray-300">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">الأنشطة التفاعلية</h3>
-                    <div id="activities-container"></div>
+        
+        <h2 id="subjects" style="color: var(--primary-color);">المواد الدراسية</h2>
+        <div class="subjects">
+            <div class="subject-card">
+                <img src="https://via.placeholder.com/400x200?text=اللغة+العربية" alt="اللغة العربية">
+                <div class="subject-content">
+                    <h3>اللغة العربية</h3>
+                    <p>تعلم قواعد اللغة العربية، الإملاء، الإنتاج الكتابي وفهم المقروء بطريقة سهلة وممتعة.</p>
+                    <a href="#arabic" class="btn">استكشف الدروس</a>
                 </div>
-            `;
-
-            const activitiesContainer = document.getElementById('activities-container');
-            unitData.activities.forEach((activity, index) => {
-                if (activity.type === "quiz") {
-                    const quizHtml = `
-                        <div class="bg-blue-50 p-5 rounded-lg shadow-md mb-6">
-                            <p class="text-xl font-semibold text-blue-800 mb-4">السؤال ${index + 1}: ${activity.question}</p>
-                            <div class="options-container">
-                                ${activity.options.map((option, i) => `
-                                    <div class="quiz-option" data-answer="${option}" data-correct="${activity.correct === option ? 'true' : 'false'}">
-                                        ${option}
-                                    </div>
-                                `).join('')}
-                            </div>
-                            <p class="feedback-message text-center mt-3 font-medium hidden"></p>
-                            <p class="explanation-message text-center mt-3 text-gray-600 hidden">${activity.explanation}</p>
-                        </div>
-                    `;
-                    activitiesContainer.innerHTML += quizHtml;
-                } else if (activity.type === "text") {
-                    const textActivityHtml = `
-                        <div class="bg-green-50 p-5 rounded-lg shadow-md mb-6">
-                            <h4 class="text-xl font-semibold text-green-800 mb-3">${activity.title}</h4>
-                            ${activity.content}
-                        </div>
-                    `;
-                    activitiesContainer.innerHTML += textActivityHtml;
-                }
-            });
-
-            // Add event listeners for quiz options
-            document.querySelectorAll('.quiz-option').forEach(option => {
-                option.addEventListener('click', function() {
-                    const parentQuiz = this.closest('.bg-blue-50');
-                    const options = parentQuiz.querySelectorAll('.quiz-option');
-                    const feedbackMessage = parentQuiz.querySelector('.feedback-message');
-                    const explanationMessage = parentQuiz.querySelector('.explanation-message');
-
-                    // Disable all options after one is clicked
-                    options.forEach(opt => {
-                        opt.style.pointerEvents = 'none';
-                    });
-
-                    if (this.dataset.correct === 'true') {
-                        this.classList.add('correct');
-                        feedbackMessage.textContent = 'إجابة صحيحة! 🎉';
-                        feedbackMessage.classList.remove('text-red-600', 'hidden');
-                        feedbackMessage.classList.add('text-green-600', 'block');
-                    } else {
-                        this.classList.add('incorrect');
-                        feedbackMessage.textContent = 'إجابة خاطئة. حاول مرة أخرى.';
-                        feedbackMessage.classList.remove('text-green-600', 'hidden');
-                        feedbackMessage.classList.add('text-red-600', 'block');
-                        // Highlight the correct answer
-                        options.forEach(opt => {
-                            if (opt.dataset.correct === 'true') {
-                                opt.classList.add('correct');
-                            }
-                        });
-                    }
-                    explanationMessage.classList.remove('hidden');
-                    explanationMessage.classList.add('block');
-                });
-            });
-        }
-
-        // Function to build navigation
-        function buildNavigation() {
-            const nav = document.getElementById('main-nav');
-            nav.innerHTML = ''; // Clear existing nav
-
-            for (const sectionTitle in encyclopediaContent) {
-                const sectionLink = document.createElement('a');
-                sectionLink.href = "#";
-                sectionLink.textContent = sectionTitle;
-                sectionLink.classList.add('font-bold', 'text-lg', 'mb-2', 'block', 'text-white', 'hover:bg-blue-600', 'rounded-lg', 'p-2');
-                sectionLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    toggleSidebar(); // Hide sidebar on mobile after selection
-                    renderSection(sectionTitle);
-                });
-                nav.appendChild(sectionLink);
-
-                const units = encyclopediaContent[sectionTitle];
-                for (const unitTitle in units) {
-                    const unitLink = document.createElement('a');
-                    unitLink.href = "#";
-                    unitLink.textContent = `• ${unitTitle}`;
-                    unitLink.classList.add('text-md', 'mr-4', 'block', 'text-white', 'hover:bg-blue-600', 'rounded-lg', 'p-2');
-                    unitLink.dataset.section = sectionTitle;
-                    unitLink.dataset.unit = unitTitle;
-                    unitLink.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        // Remove active class from all links
-                        document.querySelectorAll('#main-nav a').forEach(link => link.classList.remove('active'));
-                        // Add active class to the clicked link
-                        unitLink.classList.add('active');
-                        toggleSidebar(); // Hide sidebar on mobile after selection
-                        renderContent(encyclopediaContent[sectionTitle][unitTitle]);
-                    });
-                    nav.appendChild(unitLink);
-                }
-            }
-        }
-
-        function renderSection(sectionTitle) {
-            const contentDisplay = document.getElementById('content-display');
-            let sectionHtml = `
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">${sectionTitle}</h2>
-                <p class="text-lg text-gray-700 leading-relaxed mb-8 text-center">
-                    استكشف الوحدات المختلفة ضمن هذا المقطع:
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            `;
-
-            const units = encyclopediaContent[sectionTitle];
-            for (const unitTitle in units) {
-                sectionHtml += `
-                    <div class="bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-                         data-section="${sectionTitle}" data-unit="${unitTitle}">
-                        <h3 class="text-xl font-semibold text-blue-800 mb-2">${unitTitle}</h3>
-                        <p class="text-gray-700 text-sm">انقر للاستكشاف</p>
+            </div>
+            
+            <div class="subject-card">
+                <img src="https://via.placeholder.com/400x200?text=الرياضيات" alt="الرياضيات">
+                <div class="subject-content">
+                    <h3>الرياضيات</h3>
+                    <p>استكشف عالم الأعداد، الهندسة، القياس وحل المسائل مع تمارين تفاعلية وشروحات واضحة.</p>
+                    <a href="#math" class="btn">استكشف الدروس</a>
+                </div>
+            </div>
+            
+            <div class="subject-card">
+                <img src="https://via.placeholder.com/400x200?text=اللغة+الفرنسية" alt="اللغة الفرنسية">
+                <div class="subject-content">
+                    <h3>اللغة الفرنسية</h3>
+                    <p>طور مهاراتك في اللغة الفرنسية من خلال دروس القواعد، المفردات وفهم النصوص.</p>
+                    <a href="#french" class="btn">استكشف الدروس</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="download-section" id="downloads">
+            <h2>تحميل الدروس كملفات PDF</h2>
+            <p>يمكنك تحميل جميع الدروس والتمارين كملفات PDF لاستخدامها دون اتصال بالإنترنت</p>
+            <a href="#" class="download-btn" id="downloadPdfBtn">تحميل جميع الدروس</a>
+        </div>
+        
+        <div class="activities" id="activities">
+            <h2>أنشطة تفاعلية</h2>
+            <p>استمتع بتعلم المواد الدراسية من خلال أنشطة تفاعلية ممتعة ومصممة خصيصاً لتلاميذ السنة الخامسة ابتدائي</p>
+            
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <h4>تمرين في اللغة العربية</h4>
+                    <p>رتب الجمل التالية لتكوين فقرة مترابطة:</p>
+                    <div class="interactive-box">
+                        <div class="quiz-option">أحب الذهاب إلى المدرسة.</div>
+                        <div class="quiz-option">أستيقظ مبكراً كل يوم.</div>
+                        <div class="quiz-option">أتناول فطوري ثم أجهز حقيبتي.</div>
+                        <button class="btn" onclick="checkOrder()">تحقق من الإجابة</button>
                     </div>
-                `;
-            }
-            sectionHtml += `</div>`;
-            contentDisplay.innerHTML = sectionHtml;
-
-            // Add event listeners for unit cards
-            document.querySelectorAll('.grid > div').forEach(card => {
-                card.addEventListener('click', function() {
-                    const section = this.dataset.section;
-                    const unit = this.dataset.unit;
-                    // Set active class on the corresponding sidebar link
-                    document.querySelectorAll('#main-nav a').forEach(link => {
-                        if (link.dataset.section === section && link.dataset.unit === unit) {
-                            link.classList.add('active');
-                        } else {
-                            link.classList.remove('active');
-                        }
-                    });
-                    renderContent(encyclopediaContent[section][unit]);
-                });
-            });
+                </div>
+                
+                <div class="activity-card">
+                    <h4>مسألة رياضيات</h4>
+                    <p>احسب مساحة مستطيل طوله 8 متر وعرضه 5 متر:</p>
+                    <div class="interactive-box">
+                        <input type="number" id="mathAnswer" placeholder="أدخل الإجابة">
+                        <button class="btn" onclick="checkMathAnswer()">تحقق</button>
+                        <div class="feedback" id="mathFeedback"></div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <h4>تمرين في الفرنسية</h4>
+                    <p>اختر الإجابة الصحيحة:</p>
+                    <div class="interactive-box">
+                        <p>La maison ___ petite. (être)</p>
+                        <div class="quiz-option" onclick="checkFrenchAnswer(this, 'correct')">est</div>
+                        <div class="quiz-option" onclick="checkFrenchAnswer(this, 'incorrect')">es</div>
+                        <div class="quiz-option" onclick="checkFrenchAnswer(this, 'incorrect')">sont</div>
+                        <div class="feedback" id="frenchFeedback"></div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <h4>لعبة المفردات</h4>
+                    <p>اطابق الكلمة مع معناها:</p>
+                    <div class="interactive-box">
+                        <p>اسحب كل كلمة إلى معناها الصحيح</p>
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="border: 1px dashed #ccc; padding: 0.5rem; min-height: 100px; width: 45%;" id="words">
+                                <div draggable="true" class="draggable-word" ondragstart="drag(event)">البيت</div>
+                                <div draggable="true" class="draggable-word" ondragstart="drag(event)">المدرسة</div>
+                            </div>
+                            <div style="border: 1px dashed #ccc; padding: 0.5rem; min-height: 100px; width: 45%;" id="meanings" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <div>مكان نتعلم فيه</div>
+                                <div>مكان نسكن فيه</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="arabic" style="margin: 3rem 0;">
+            <h2 style="color: var(--primary-color);">دروس اللغة العربية</h2>
+            
+            <div class="subject-card" style="margin-bottom: 1.5rem;">
+                <div class="subject-content">
+                    <h3>النصوص وفهم المقروء</h3>
+                    <p>اقرأ النص التالي ثم أجب عن الأسئلة:</p>
+                    
+                    <div class="interactive-box">
+                        <h4>نص: الشحاذ الصغير</h4>
+                        <p>أثار منظر الشحاذ في نفس الكاتب العطف والشفقة والرحمة، وحزّ الأسى في قلبه. كان طفلاً نحيف الجسم، بثياب قديمة بالية، يجلس على جانب الطريق يستعطف الناس.</p>
+                        
+                        <h4 style="margin-top: 1rem;">الأسئلة:</h4>
+                        <ol>
+                            <li>ما هي المشاعر التي أثارها منظر الشحاذ في نفس الكاتب؟</li>
+                            <li>صف حالة الطفل الشحاذ كما وردت في النص.</li>
+                            <li>ما هو موقف الكاتب مما رآه؟</li>
+                        </ol>
+                        
+                        <textarea style="width: 100%; min-height: 100px; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;" placeholder="أجب عن الأسئلة هنا..."></textarea>
+                        <button class="btn" style="margin-top: 0.5rem;">تحقق من الإجابات</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subject-card">
+                <div class="subject-content">
+                    <h3>القواعد النحوية</h3>
+                    <p>تعلم الإعراب والتحليل اللغوي:</p>
+                    
+                    <div class="interactive-box">
+                        <h4>تمرين في الإعراب</h4>
+                        <p>أعرب الكلمات التالية:</p>
+                        <p>"ذهب التلميذ إلى المدرسة"</p>
+                        
+                        <div style="margin-top: 1rem;">
+                            <label>ذهب:</label>
+                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        
+                        <div style="margin-top: 0.5rem;">
+                            <label>التلميذ:</label>
+                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        
+                        <div style="margin-top: 0.5rem;">
+                            <label>إلى:</label>
+                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        
+                        <div style="margin-top: 0.5rem;">
+                            <label>المدرسة:</label>
+                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        
+                        <button class="btn" style="margin-top: 1rem;">تحقق من الإعراب</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="math" style="margin: 3rem 0;">
+            <h2 style="color: var(--primary-color);">دروس الرياضيات</h2>
+            
+            <div class="subject-card" style="margin-bottom: 1.5rem;">
+                <div class="subject-content">
+                    <h3>المسائل الحسابية</h3>
+                    <p>حل المسائل التالية:</p>
+                    
+                    <div class="interactive-box">
+                        <h4>مسألة 1:</h4>
+                        <p>اشترى تاجر 12 طنًا من البضاعة. إذا كان وزن العربة فارغة 5 أطنان و322 كيلوغرامًا، فما هو وزن البضاعة بالكيلوغرامات؟</p>
+                        
+                        <div style="margin-top: 1rem;">
+                            <label>الحل:</label>
+                            <input type="number" id="mathProblem1" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                            <span>كيلوغرام</span>
+                        </div>
+                        
+                        <button class="btn" style="margin-top: 0.5rem;" onclick="checkMathProblem1()">تحقق من الحل</button>
+                        <div class="feedback" id="mathProblem1Feedback"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subject-card">
+                <div class="subject-content">
+                    <h3>الهندسة</h3>
+                    <p>تعلم الأشكال الهندسية وخصائصها:</p>
+                    
+                    <div class="interactive-box">
+                        <h4>تمرين في الأشكال الهندسية</h4>
+                        <p>احسب مساحة المستطيل إذا علمت أن طوله 20 مترًا وعرضه ربع طوله:</p>
+                        
+                        <div style="margin-top: 1rem;">
+                            <label>مساحة المستطيل =</label>
+                            <input type="number" id="rectangleArea" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                            <span>متر مربع</span>
+                        </div>
+                        
+                        <button class="btn" style="margin-top: 0.5rem;" onclick="checkRectangleArea()">تحقق من الحل</button>
+                        <div class="feedback" id="rectangleAreaFeedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="french" style="margin: 3rem 0;">
+            <h2 style="color: var(--primary-color);">دروس اللغة الفرنسية</h2>
+            
+            <div class="subject-card" style="margin-bottom: 1.5rem;">
+                <div class="subject-content">
+                    <h3>فهم النصوص</h3>
+                    <p>اقرأ النص التالي ثم أجب عن الأسئلة:</p>
+                    
+                    <div class="interactive-box">
+                        <h4>Texte : La maison</h4>
+                        <p>La maison est la première école de l'enfant. Elle rassemble toute la famille (père, mère, enfants, grands-parents). La maison contient généralement des chambres, une cuisine, un salon... Nous sommes très joyeux dans la maison.</p>
+                        
+                        <h4 style="margin-top: 1rem;">Questions:</h4>
+                        <ol>
+                            <li>Que rassemble la maison ?</li>
+                            <li>Relève du texte un adverbe.</li>
+                            <li>Fais une phrase avec le mot "joyeux".</li>
+                        </ol>
+                        
+                        <textarea style="width: 100%; min-height: 100px; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;" placeholder="Répondez aux questions ici..."></textarea>
+                        <button class="btn" style="margin-top: 0.5rem;">Vérifier les réponses</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subject-card">
+                <div class="subject-content">
+                    <h3>القواعد الفرنسية</h3>
+                    <p>تمرين في تصريف الأفعال:</p>
+                    
+                    <div class="interactive-box">
+                        <h4>Conjugaison des verbes</h4>
+                        <p>Conjuguez le verbe "être" au présent:</p>
+                        
+                        <div style="margin-top: 1rem;">
+                            <label>Je</label>
+                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        
+                        <div style="margin-top: 0.5rem;">
+                            <label>Tu</label>
+                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        
+                        <div style="margin-top: 0.5rem;">
+                            <label>Il/Elle</label>
+                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        
+                        <div style="margin-top: 0.5rem;">
+                            <label>Nous</label>
+                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        
+                        <div style="margin-top: 0.5rem;">
+                            <label>Vous</label>
+                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        
+                        <div style="margin-top: 0.5rem;">
+                            <label>Ils/Elles</label>
+                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        
+                        <button class="btn" style="margin-top: 1rem;">Vérifier les réponses</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="about" style="background-color: var(--light-color); padding: 2rem 0;">
+        <div class="container">
+            <h2 style="color: var(--primary-color); text-align: center;">عن منصة العلّامة رؤوف</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                منصة العلّامة رؤوف هي منصة تعليمية إلكترونية متكاملة موجهة لتلاميذ السنة الخامسة ابتدائي. تم تطوير المنصة بناءً على المنهج الدراسي الرسمي مع إضافة أنشطة تفاعلية ممتعة لتسهيل عملية التعلم وجعلها أكثر متعة وفعالية.
+                <br><br>
+                تهدف المنصة إلى دعم التلاميذ في رحلتهم التعليمية من خلال تقديم محتوى تعليمي عالي الجودة، تمارين تفاعلية، وشروحات واضحة تغطي جميع المواد الدراسية.
+            </p>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="#home">الرئيسية</a>
+            <a href="#subjects">المواد الدراسية</a>
+            <a href="#activities">الأنشطة</a>
+            <a href="#downloads">التحميلات</a>
+            <a href="#about">عن المنصة</a>
+            <a href="#" id="contactBtn">اتصل بنا</a>
+        </div>
+        <p>جميع الحقوق محفوظة &copy; 2023 منصة العلّامة رؤوف</p>
+    </footer>
+    
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>اتصل بنا</h2>
+            <form style="margin-top: 1rem;">
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: block; margin-bottom: 0.3rem;">الاسم:</label>
+                    <input type="text" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: block; margin-bottom: 0.3rem;">البريد الإلكتروني:</label>
+                    <input type="email" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: block; margin-bottom: 0.3rem;">الرسالة:</label>
+                    <textarea style="width: 100%; min-height: 100px; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                </div>
+                
+                <button type="submit" class="btn">إرسال</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Download Modal -->
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>تحميل الدروس</h2>
+            <p>اختر المادة التي تريد تحميلها:</p>
+            
+            <div style="margin-top: 1.5rem;">
+                <a href="#" class="download-btn" style="display: block; text-align: center; margin-bottom: 1rem;">تحميل دروس اللغة العربية</a>
+                <a href="#" class="download-btn" style="display: block; text-align: center; margin-bottom: 1rem;">تحميل دروس الرياضيات</a>
+                <a href="#" class="download-btn" style="display: block; text-align: center; margin-bottom: 1rem;">تحميل دروس اللغة الفرنسية</a>
+                <a href="#" class="download-btn" style="display: block; text-align: center; background-color: var(--primary-color);">تحميل جميع الدروس</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Interactive elements functionality
+        function checkOrder() {
+            alert("سيتم التحقق من ترتيب الجمل في نسخة كاملة من المنصة");
         }
-
-
-        // Sidebar toggle functionality for mobile
-        const menuToggle = document.getElementById('menu-toggle');
-        const sidebar = document.getElementById('sidebar');
-
-        function toggleSidebar() {
-            sidebar.classList.toggle('hidden');
-            if (!sidebar.classList.contains('hidden')) {
-                // If sidebar is shown, add an overlay to click outside
-                const overlay = document.createElement('div');
-                overlay.id = 'sidebar-overlay';
-                overlay.classList.add('fixed', 'inset-0', 'bg-black', 'bg-opacity-50', 'z-30', 'md:hidden');
-                document.body.appendChild(overlay);
-                overlay.addEventListener('click', toggleSidebar);
+        
+        function checkMathAnswer() {
+            const answer = document.getElementById('mathAnswer').value;
+            const feedback = document.getElementById('mathFeedback');
+            
+            if (answer === '40') {
+                feedback.textContent = 'إجابة صحيحة! مساحة المستطيل = الطول × العرض = 8 × 5 = 40 متر مربع';
+                feedback.className = 'feedback correct';
             } else {
-                // If sidebar is hidden, remove the overlay
-                const overlay = document.getElementById('sidebar-overlay');
-                if (overlay) {
-                    overlay.remove();
-                }
+                feedback.textContent = 'إجابة خاطئة، حاول مرة أخرى! تذكر أن مساحة المستطيل = الطول × العرض';
+                feedback.className = 'feedback incorrect';
             }
         }
-
-        menuToggle.addEventListener('click', toggleSidebar);
-
-        // Initial setup
-        document.addEventListener('DOMContentLoaded', () => {
-            buildNavigation();
-            // Hide sidebar on small screens by default but allow it to be toggled
-            if (window.innerWidth < 768) {
-                sidebar.classList.add('hidden');
+        
+        function checkFrenchAnswer(element, type) {
+            const feedback = document.getElementById('frenchFeedback');
+            const options = element.parentElement.querySelectorAll('.quiz-option');
+            
+            options.forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+            
+            if (type === 'correct') {
+                element.classList.add('correct');
+                feedback.textContent = 'إجابة صحيحة! "est" هي الصيغة الصحيحة للفعل être مع المفرد الغائب.';
+                feedback.className = 'feedback correct';
+            } else {
+                element.classList.add('incorrect');
+                feedback.textContent = 'إجابة خاطئة، حاول مرة أخرى! تذكر أن "est" هي الصيغة الصحيحة للفعل être مع المفرد الغائب.';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+        
+        function checkMathProblem1() {
+            const answer = document.getElementById('mathProblem1').value;
+            const feedback = document.getElementById('mathProblem1Feedback');
+            
+            if (answer === '6678') {
+                feedback.textContent = 'إجابة صحيحة! وزن البضاعة = الوزن الكلي - وزن العربة الفارغة = 12000 - 5322 = 6678 كيلوغرام';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'إجابة خاطئة، حاول مرة أخرى! تذكر أن وزن البضاعة = الوزن الكلي - وزن العربة الفارغة';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+        
+        function checkRectangleArea() {
+            const answer = document.getElementById('rectangleArea').value;
+            const feedback = document.getElementById('rectangleAreaFeedback');
+            
+            if (answer === '75') {
+                feedback.textContent = 'إجابة صحيحة! العرض = 20 ÷ 4 = 5 متر، المساحة = 15 × 5 = 75 متر مربع';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'إجابة خاطئة، حاول مرة أخرى! تذكر أن العرض = ربع الطول، ثم المساحة = الطول × العرض';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+        
+        // Drag and drop functionality
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.textContent);
+        }
+        
+        function drop(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            const meanings = ev.target;
+            
+            // In a full implementation, we would check if the drop is correct
+            // For now, just show a message
+            alert(`تم إسقاط "${data}" في منطقة المعاني. في النسخة الكاملة سيتم التحقق من التطابق الصحيح.`);
+        }
+        
+        // Modal functionality
+        const contactBtn = document.getElementById('contactBtn');
+        const contactModal = document.getElementById('contactModal');
+        const closeBtns = document.querySelectorAll('.close-btn');
+        const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+        const downloadModal = document.getElementById('downloadModal');
+        
+        contactBtn.onclick = function(e) {
+            e.preventDefault();
+            contactModal.style.display = 'block';
+        }
+        
+        downloadPdfBtn.onclick = function(e) {
+            e.preventDefault();
+            downloadModal.style.display = 'block';
+        }
+        
+        closeBtns.forEach(btn => {
+            btn.onclick = function() {
+                contactModal.style.display = 'none';
+                downloadModal.style.display = 'none';
             }
         });
-
-        // LLM Integration Placeholder (for future activities like generating more questions)
-        async function generateMoreQuestions(topic) {
-            showMessageBox("جاري إنشاء المزيد من الأسئلة، يرجى الانتظار...", null);
-            let chatHistory = [];
-            chatHistory.push({ role: "user", parts: [{ text: `Generate 3 multiple choice questions in Arabic about "${topic}" for fourth-grade primary students. Provide the question, 4 options, and the correct answer. Format as JSON.` }] });
-            const payload = {
-                contents: chatHistory,
-                generationConfig: {
-                    responseMimeType: "application/json",
-                    responseSchema: {
-                        type: "ARRAY",
-                        items: {
-                            type: "OBJECT",
-                            properties: {
-                                "question": { "type": "STRING" },
-                                "options": { "type": "ARRAY", "items": { "type": "STRING" } },
-                                "correctAnswer": { "type": "STRING" }
-                            },
-                            "propertyOrdering": ["question", "options", "correctAnswer"]
-                        }
-                    }
-                }
-            };
-            const apiKey = ""; // Canvas will provide this at runtime
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const result = await response.json();
-
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const json = result.candidates[0].content.parts[0].text;
-                    const parsedJson = JSON.parse(json);
-                    // Here you would integrate these new questions into the current unit's activities
-                    console.log("Generated Questions:", parsedJson);
-                    showMessageBox("تم إنشاء أسئلة جديدة بنجاح! يمكنك دمجها في الأنشطة.", null);
-                    // For demonstration, let's just log and add a placeholder to the current view
-                    const activitiesContainer = document.getElementById('activities-container');
-                    if (activitiesContainer) {
-                        let newQuestionsHtml = `
-                            <div class="bg-yellow-50 p-5 rounded-lg shadow-md mt-6">
-                                <h4 class="text-xl font-semibold text-yellow-800 mb-3">أسئلة إضافية (تم إنشاؤها)</h4>
-                                <ul class="list-disc pr-5">
-                        `;
-                        parsedJson.forEach(q => {
-                            newQuestionsHtml += `<li><p class="font-medium">${q.question}</p><ul class="list-circle pr-5 text-sm">`;
-                            q.options.forEach(opt => newQuestionsHtml += `<li>${opt}</li>`);
-                            newQuestionsHtml += `</ul><p class="text-green-700 text-sm">الإجابة الصحيحة: ${q.correctAnswer}</p></li>`;
-                        });
-                        newQuestionsHtml += `</ul></div>`;
-                        activitiesContainer.innerHTML += newQuestionsHtml;
-                    }
-
-                } else {
-                    showMessageBox("حدث خطأ في إنشاء الأسئلة: لا توجد بيانات مرشحة.", null);
-                }
-            } catch (error) {
-                console.error("Error generating questions:", error);
-                showMessageBox(`حدث خطأ أثناء إنشاء الأسئلة: ${error.message}`, null);
+        
+        window.onclick = function(event) {
+            if (event.target == contactModal) {
+                contactModal.style.display = 'none';
+            }
+            if (event.target == downloadModal) {
+                downloadModal.style.display = 'none';
             }
         }
-
-        // Example of how to call generateMoreQuestions (you could add a button for this)
-        // setTimeout(() => generateMoreQuestions("الفعل الماضي"), 5000); // Call after 5 seconds for testing
     </script>
 </body>
 </html>
