@@ -3,48 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة العلّامة رؤوف للسنة الخامسة ابتدائي</title>
+    <title>منصة العلّامة رؤوف - بوابة السحر التعليمي للسنة الخامسة ابتدائي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* CSS styles will go here */
+        /* Base Colors & Fonts - Harry Potter Theme */
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2ecc71;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
+            --hp-gold: #c79f32; /* Primary Gold */
+            --hp-red: #740001; /* Primary Red (Gryffindor) */
+            --hp-darkblue: #222f5b; /* Primary Dark Blue (Ravenclaw) */
+            --hp-green: #1a472a; /* Primary Green (Slytherin) */
+            --hp-silver: #aaaaaa; /* Primary Silver (Hufflepuff) */
+            --hp-brown: #5d4037; /* Wood/Old Paper */
+            --hp-parchment: #f7e9c3; /* Parchment Background */
+            --hp-ink: #2c3e50; /* Dark Ink */
+            --hp-light-gray: #ecf0f1;
+            --hp-shadow: rgba(0,0,0,0.3);
+
+            --font-heading: 'Merriweather', serif;
+            --font-body: 'Open Sans', sans-serif;
         }
-        
+
+        /* General Styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: var(--font-body);
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: var(--hp-parchment);
+            color: var(--hp-ink);
+            line-height: 1.6;
+            direction: rtl; /* Ensure RTL for Arabic content */
         }
-        
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            color: var(--hp-darkblue);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--hp-red);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--hp-gold);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--hp-gold);
+            color: var(--hp-ink);
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 3px 6px var(--hp-shadow);
+            border: 2px solid var(--hp-red);
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+
+        .btn:hover {
+            background-color: var(--hp-red);
+            color: var(--hp-parchment);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px var(--hp-shadow);
+        }
+
+        /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, var(--hp-darkblue), var(--hp-green));
             color: white;
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-bottom: 4px solid var(--hp-gold);
         }
-        
+
         .logo {
-            font-size: 2rem;
+            font-size: 2.8rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px var(--hp-ink);
         }
-        
+
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             opacity: 0.9;
+            font-style: italic;
         }
-        
+
+        /* Navigation */
         nav {
-            background-color: var(--dark-color);
-            padding: 0.5rem;
+            background-color: var(--hp-ink);
+            padding: 0.7rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 999;
         }
-        
+
         nav ul {
             display: flex;
             justify-content: center;
@@ -52,309 +123,487 @@
             padding: 0;
             margin: 0;
         }
-        
+
         nav li {
-            margin: 0 1rem;
+            margin: 0 1.2rem;
         }
-        
+
         nav a {
-            color: white;
+            color: var(--hp-parchment);
             text-decoration: none;
             font-weight: bold;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.4rem;
             border-radius: 4px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: var(--font-body);
+            border: 1px solid transparent;
         }
-        
+
         nav a:hover {
-            background-color: rgba(255,255,255,0.2);
+            background-color: var(--hp-darkblue);
+            color: var(--hp-gold);
+            border-color: var(--hp-gold);
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        
+
+        /* Hero Section */
         .hero {
             background-color: white;
-            border-radius: 8px;
-            padding: 2rem;
+            border-radius: 10px;
+            padding: 3rem;
             text-align: center;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 20px var(--hp-shadow);
+            border: 4px double var(--hp-gold);
         }
-        
+
         .hero h1 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+            color: var(--hp-red);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
         }
-        
+
         .hero p {
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1.2rem;
+            line-height: 1.8;
             color: #555;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
         }
-        
+
+        /* Subject Cards */
         .subjects {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
         }
-        
+
         .subject-card {
             background-color: white;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 5px 15px var(--hp-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid var(--hp-silver);
         }
-        
+
         .subject-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px var(--hp-shadow);
+            border-color: var(--hp-gold);
         }
-        
+
         .subject-card img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
+            border-bottom: 1px solid var(--hp-light-gray);
         }
-        
+
         .subject-content {
-            padding: 1.5rem;
+            padding: 2rem;
+            text-align: center;
         }
-        
+
         .subject-content h3 {
-            color: var(--primary-color);
+            color: var(--hp-darkblue);
             margin-top: 0;
+            font-size: 1.7rem;
         }
-        
+
         .subject-content p {
             color: #666;
-            line-height: 1.5;
+            line-height: 1.6;
+            font-size: 1rem;
         }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #27ae60;
-        }
-        
-        .activities {
+
+        /* Sections (Activities, Downloads, About) */
+        section {
             background-color: white;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 20px var(--hp-shadow);
+            border: 4px double var(--hp-brown);
         }
-        
-        .activities h2 {
-            color: var(--primary-color);
+
+        section h2 {
+            color: var(--hp-red);
             margin-top: 0;
-            border-bottom: 2px solid var(--light-color);
-            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--hp-gold);
+            padding-bottom: 1rem;
+            text-align: center;
+            font-size: 2.2rem;
         }
-        
+
+        .section-description {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        /* Activity Grid */
         .activity-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .activity-card {
-            background-color: var(--light-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.3s;
-        }
-        
-        .activity-card:hover {
-            transform: translateY(-3px);
-        }
-        
-        .activity-card h4 {
-            color: var(--dark-color);
-            margin-top: 0;
-        }
-        
-        .activity-card p {
-            color: #555;
-        }
-        
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .download-section {
-            background-color: white;
+
+        .activity-card {
+            background-color: var(--hp-light-gray);
             border-radius: 8px;
             padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid var(--hp-silver);
             text-align: center;
         }
-        
-        .download-section h2 {
-            color: var(--primary-color);
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px var(--hp-shadow);
+            border-color: var(--hp-gold);
+        }
+
+        .activity-card h4 {
+            color: var(--hp-ink);
             margin-top: 0;
+            font-size: 1.4rem;
         }
-        
-        .download-btn {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 1rem;
-            transition: background-color 0.3s;
+
+        .activity-card p {
+            color: #555;
+            margin-bottom: 1.5rem;
         }
-        
-        .download-btn:hover {
-            background-color: #c0392b;
-        }
-        
-        /* Interactive elements */
+
+        /* Interactive Box */
         .interactive-box {
-            background-color: #f8f9fa;
-            border-left: 4px solid var(--primary-color);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 4px 4px 0;
+            background-color: var(--hp-parchment);
+            border-left: 5px solid var(--hp-darkblue);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
         }
-        
+
         .interactive-box h4 {
             margin-top: 0;
-            color: var(--dark-color);
+            color: var(--hp-darkblue);
+            font-size: 1.3rem;
+            text-align: right;
+            border-bottom: 1px dashed var(--hp-silver);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
-        
+
+        .interactive-box input[type="text"],
+        .interactive-box input[type="number"],
+        .interactive-box textarea {
+            width: calc(100% - 1.5rem);
+            padding: 0.8rem;
+            border: 1px solid var(--hp-silver);
+            border-radius: 5px;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            background-color: #fff;
+        }
+
+        .interactive-box label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--hp-ink);
+        }
+
         .quiz-option {
             background-color: white;
-            border: 1px solid #ddd;
+            border: 1px solid var(--hp-silver);
             padding: 0.8rem;
-            margin: 0.5rem 0;
-            border-radius: 4px;
+            margin: 0.6rem 0;
+            border-radius: 5px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        
+
         .quiz-option:hover {
-            background-color: #f0f0f0;
+            background-color: var(--hp-light-gray);
+            border-color: var(--hp-gold);
+            transform: scale(1.01);
         }
-        
+
         .quiz-option.correct {
-            background-color: #d4edda;
-            border-color: #c3e6cb;
+            background-color: #d4edda; /* Light green */
+            border-color: #28a745; /* Darker green */
+            color: #155724;
+            font-weight: bold;
         }
-        
+
         .quiz-option.incorrect {
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
+            background-color: #f8d7da; /* Light red */
+            border-color: #dc3545; /* Darker red */
+            color: #721c24;
+            font-weight: bold;
         }
-        
+
         .feedback {
-            padding: 0.8rem;
+            padding: 1rem;
             margin: 1rem 0;
-            border-radius: 4px;
+            border-radius: 5px;
             display: none;
+            font-weight: bold;
         }
-        
+
         .feedback.correct {
             background-color: #d4edda;
             color: #155724;
             display: block;
+            border: 1px solid #c3e6cb;
         }
-        
+
         .feedback.incorrect {
             background-color: #f8d7da;
             color: #721c24;
             display: block;
+            border: 1px solid #f5c6cb;
         }
-        
-        /* Modal styles */
+
+        /* Download Section */
+        .download-section {
+            text-align: center;
+        }
+
+        .download-btn-modal {
+            background-color: var(--hp-red);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+            border: 2px solid var(--hp-gold);
+            font-family: var(--font-body);
+        }
+
+        .download-btn-modal:hover {
+            background-color: var(--hp-darkblue);
+            border-color: var(--hp-red);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--hp-ink);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            margin-top: 2.5rem;
+            border-top: 4px solid var(--hp-gold);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+            font-weight: bold;
+            padding: 0.3rem 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--hp-gold);
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Modal Styles */
         .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
             left: 0;
             top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        
+
         .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 2rem;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 700px;
+            background-color: var(--hp-parchment);
+            margin: auto; /* Center vertically and horizontally */
+            padding: 2.5rem;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
             position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            border: 4px double var(--hp-brown);
+            text-align: center;
         }
-        
+
         .close-btn {
             position: absolute;
             top: 1rem;
-            right: 1rem;
-            font-size: 1.5rem;
-            cursor: pointer;
+            left: 1rem; /* Adjusted for RTL */
+            font-size: 2rem;
+            font-weight: bold;
             color: #777;
+            cursor: pointer;
+            transition: color 0.3s ease;
         }
-        
-        .close-btn:hover {
-            color: #333;
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--hp-red);
+            text-decoration: none;
+            transform: rotate(5deg);
         }
-        
-        /* Responsive adjustments */
+
+        .modal-content h2 {
+            color: var(--hp-darkblue);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px dashed var(--hp-silver);
+            padding-bottom: 0.8rem;
+        }
+
+        .modal-content form div {
+            margin-bottom: 1.2rem;
+            text-align: right;
+        }
+
+        .modal-content label {
+            font-weight: bold;
+            color: var(--hp-ink);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .modal-content input[type="text"],
+        .modal-content input[type="email"],
+        .modal-content textarea {
+            width: calc(100% - 20px); /* Adjust for padding */
+            padding: 10px;
+            border: 1px solid var(--hp-silver);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            background-color: white;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .modal-content textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
+            .container {
+                margin: 1.5rem auto;
+                padding: 0 1rem;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 2.2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
             nav ul {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             nav li {
-                margin: 0.5rem 0;
+                margin: 0.4rem 0;
             }
-            
-            .subjects {
+
+            nav a {
+                padding: 0.5rem 1rem;
+            }
+
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .subjects, .activity-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .activity-grid {
-                grid-template-columns: 1fr;
+
+            .subject-content, .activity-card {
+                padding: 1.5rem;
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            .close-btn {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.8rem;
+            }
+            .tagline {
+                font-size: 0.9rem;
+            }
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 0.9rem;
+            }
+            h2 {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -362,478 +611,746 @@
 <body>
     <header>
         <div class="logo">منصة العلّامة رؤوف</div>
-        <div class="tagline">بوابة التعلم التفاعلي للسنة الخامسة ابتدائي</div>
+        <div class="tagline">بوابة السحر التعليمي للسنة الخامسة ابتدائي</div>
     </header>
-    
+
     <nav>
         <ul>
             <li><a href="#home">الرئيسية</a></li>
             <li><a href="#subjects">المواد الدراسية</a></li>
-            <li><a href="#activities">الأنشطة</a></li>
-            <li><a href="#downloads">التحميلات</a></li>
+            <li><a href="#activities">الأنشطة السحرية</a></li>
+            <li><a href="#downloads">قاعة التحميلات</a></li>
             <li><a href="#about">عن المنصة</a></li>
         </ul>
     </nav>
-    
-    <div class="container" id="home">
-        <div class="hero">
-            <h1>مرحباً بكم في منصة العلّامة رؤوف</h1>
-            <p>منصة تعليمية شاملة وممتعة تحتوي على جميع الدروس والتمارين للسنة الخامسة ابتدائي. استمتع بتجربة تعلم تفاعلية مع أنشطة ممتعة وتمارين مسلية!</p>
-            <a href="#subjects" class="btn">ابدأ الرحلة التعليمية</a>
-        </div>
-        
-        <h2 id="subjects" style="color: var(--primary-color);">المواد الدراسية</h2>
-        <div class="subjects">
-            <div class="subject-card">
-                <img src="https://via.placeholder.com/400x200?text=اللغة+العربية" alt="اللغة العربية">
-                <div class="subject-content">
-                    <h3>اللغة العربية</h3>
-                    <p>تعلم قواعد اللغة العربية، الإملاء، الإنتاج الكتابي وفهم المقروء بطريقة سهلة وممتعة.</p>
-                    <a href="#arabic" class="btn">استكشف الدروس</a>
-                </div>
-            </div>
-            
-            <div class="subject-card">
-                <img src="https://via.placeholder.com/400x200?text=الرياضيات" alt="الرياضيات">
-                <div class="subject-content">
-                    <h3>الرياضيات</h3>
-                    <p>استكشف عالم الأعداد، الهندسة، القياس وحل المسائل مع تمارين تفاعلية وشروحات واضحة.</p>
-                    <a href="#math" class="btn">استكشف الدروس</a>
-                </div>
-            </div>
-            
-            <div class="subject-card">
-                <img src="https://via.placeholder.com/400x200?text=اللغة+الفرنسية" alt="اللغة الفرنسية">
-                <div class="subject-content">
-                    <h3>اللغة الفرنسية</h3>
-                    <p>طور مهاراتك في اللغة الفرنسية من خلال دروس القواعد، المفردات وفهم النصوص.</p>
-                    <a href="#french" class="btn">استكشف الدروس</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="download-section" id="downloads">
-            <h2>تحميل الدروس كملفات PDF</h2>
-            <p>يمكنك تحميل جميع الدروس والتمارين كملفات PDF لاستخدامها دون اتصال بالإنترنت</p>
-            <a href="#" class="download-btn" id="downloadPdfBtn">تحميل جميع الدروس</a>
-        </div>
-        
-        <div class="activities" id="activities">
-            <h2>أنشطة تفاعلية</h2>
-            <p>استمتع بتعلم المواد الدراسية من خلال أنشطة تفاعلية ممتعة ومصممة خصيصاً لتلاميذ السنة الخامسة ابتدائي</p>
-            
-            <div class="activity-grid">
-                <div class="activity-card">
-                    <h4>تمرين في اللغة العربية</h4>
-                    <p>رتب الجمل التالية لتكوين فقرة مترابطة:</p>
-                    <div class="interactive-box">
-                        <div class="quiz-option">أحب الذهاب إلى المدرسة.</div>
-                        <div class="quiz-option">أستيقظ مبكراً كل يوم.</div>
-                        <div class="quiz-option">أتناول فطوري ثم أجهز حقيبتي.</div>
-                        <button class="btn" onclick="checkOrder()">تحقق من الإجابة</button>
+
+    <main class="container">
+        <section id="home" class="hero">
+            <h1>أهلاً بكم في هوجورتس المعرفة!</h1>
+            <p>انطلق في رحلة تعليمية ساحرة مع منصة العلّامة رؤوف، حيث تتحول الدروس إلى مغامرات ممتعة وتمارين تفاعلية تجعل التعلم تجربة لا تُنسى للسنة الخامسة ابتدائي. اكتشف عالم المعرفة بأسلوب تفاعلي ومسلي!</p>
+            <a href="#subjects" class="btn">ابدأ رحلتك التعليمية السحرية</a>
+        </section>
+
+        <section id="subjects">
+            <h2>المواد الدراسية السحرية</h2>
+            <p class="section-description">استكشف كنوز المعرفة في موادنا الدراسية المصممة بعناية لتناسب تلاميذ السنة الخامسة ابتدائي.</p>
+            <div class="subjects">
+                <div class="subject-card">
+                    <img src="https://via.placeholder.com/400x200?text=اللغة+العربية" alt="اللغة العربية">
+                    <div class="subject-content">
+                        <h3>اللغة العربية</h3>
+                        <p>تعلّم أسرار لغتنا الجميلة: قواعد النحو الساحرة، فنون الإملاء، وأسرار التعبير الكتابي وقراءة النصوص بطلاقة وفهم عميق.</p>
+                        <a href="#arabic" class="btn">استكشف الدروس</a>
                     </div>
                 </div>
-                
-                <div class="activity-card">
-                    <h4>مسألة رياضيات</h4>
-                    <p>احسب مساحة مستطيل طوله 8 متر وعرضه 5 متر:</p>
+
+                <div class="subject-card">
+                    <img src="https://via.placeholder.com/400x200?text=الرياضيات" alt="الرياضيات">
+                    <div class="subject-content">
+                        <h3>الرياضيات</h3>
+                        <p>اغوص في عالم الأعداد الغامض، اكتشف أبعاد الهندسة، أتقن فنون القياس، وحلّ الألغاز الحسابية المعقدة بتمارين تفاعلية وشروحات واضحة.</p>
+                        <a href="#math" class="btn">استكشف الدروس</a>
+                    </div>
+                </div>
+
+                <div class="subject-card">
+                    <img src="https://via.placeholder.com/400x200?text=اللغة+الفرنسية" alt="اللغة الفرنسية">
+                    <div class="subject-content">
+                        <h3>اللغة الفرنسية</h3>
+                        <p>تحدّث لغة السحر والدبلوماسية! طوّر مهاراتك في اللغة الفرنسية من خلال دروس القواعد الواضحة، المفردات الغنية، وفهم النصوص بطلاقة.</p>
+                        <a href="#french" class="btn">استكشف الدروس</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="downloads" class="download-section">
+            <h2>قاعة التحميلات السرية</h2>
+            <p class="section-description">اكتشف مخطوطات المعرفة! يمكنك تحميل جميع الدروس والتمارين كملفات PDF للاحتفاظ بها والاستفادة منها في أي وقت دون الحاجة للاتصال بالإنترنت.</p>
+            <a href="#" class="btn download-btn-modal" id="downloadPdfBtn">افتح خزانة التحميلات السحرية</a>
+        </section>
+
+        <section id="activities">
+            <h2>الأنشطة التفاعلية الساحرة</h2>
+            <p class="section-description">اجعل التعلم مغامرة! استمتع بتحديات عقلية شيقة وأنماط لعب مبتكرة مصممة خصيصاً لتلاميذ السنة الخامسة ابتدائي.</p>
+
+            <div class="activity-grid">
+                <article class="activity-card">
+                    <h4>تمرين في اللغة العربية: ترتيب الكلمات</h4>
+                    <p>رتب الجمل التالية لتكوين فقرة مترابطة ومنطقية تحكي قصة قصيرة:</p>
                     <div class="interactive-box">
-                        <input type="number" id="mathAnswer" placeholder="أدخل الإجابة">
-                        <button class="btn" onclick="checkMathAnswer()">تحقق</button>
+                        <p>اسحب الجمل لترتيبها الصحيح:</p>
+                        <div id="arabicOrderExercise" style="display: flex; flex-direction: column; gap: 0.5rem; background-color: white; padding: 1rem; border-radius: 5px;">
+                            <div class="quiz-option draggable" draggable="true" data-order="3">وبعد أن أنهى واجباته، لعب مع أصدقائه في الحديقة.</div>
+                            <div class="quiz-option draggable" draggable="true" data-order="1">استيقظ أحمد مبكراً في صباح يوم مشرق.</div>
+                            <div class="quiz-option draggable" draggable="true" data-order="2">تناول فطوره الشهي ثم ذهب إلى المدرسة بحماس.</div>
+                            <div class="quiz-option draggable" draggable="true" data-order="4">عاد إلى البيت في المساء سعيداً بDيومه المليء بالنشاط.</div>
+                        </div>
+                        <button class="btn" onclick="checkOrder()">تحقق من ترتيب الجمل</button>
+                    </div>
+                </article>
+
+                <article class="activity-card">
+                    <h4>مسألة رياضيات: حساب المساحة</h4>
+                    <p>احسب مساحة حديقة مستطيلة الشكل طولها 15 مترًا وعرضها 8 أمتار:</p>
+                    <div class="interactive-box">
+                        <label for="mathAnswer">المساحة هي:</label>
+                        <input type="number" id="mathAnswer" placeholder="أدخل الإجابة بالمتر المربع">
+                        <button class="btn" onclick="checkMathAnswer()">تحقق من الحل</button>
                         <div class="feedback" id="mathFeedback"></div>
                     </div>
-                </div>
-                
-                <div class="activity-card">
-                    <h4>تمرين في الفرنسية</h4>
-                    <p>اختر الإجابة الصحيحة:</p>
+                </article>
+
+                <article class="activity-card">
+                    <h4>تمرين في الفرنسية: اختيار الفعل الصحيح</h4>
+                    <p>اختر التصريف الصحيح للفعل "être" في الجملة التالية:</p>
                     <div class="interactive-box">
-                        <p>La maison ___ petite. (être)</p>
-                        <div class="quiz-option" onclick="checkFrenchAnswer(this, 'correct')">est</div>
-                        <div class="quiz-option" onclick="checkFrenchAnswer(this, 'incorrect')">es</div>
-                        <div class="quiz-option" onclick="checkFrenchAnswer(this, 'incorrect')">sont</div>
+                        <p>Les élèves ____ intelligents. (être au présent)</p>
+                        <div class="quiz-option" onclick="checkFrenchAnswer(this, 'correct')">sont</div>
+                        <div class="quiz-option" onclick="checkFrenchAnswer(this, 'incorrect')">est</div>
+                        <div class="quiz-option" onclick="checkFrenchAnswer(this, 'incorrect')">sommes</div>
                         <div class="feedback" id="frenchFeedback"></div>
                     </div>
-                </div>
-                
-                <div class="activity-card">
-                    <h4>لعبة المفردات</h4>
-                    <p>اطابق الكلمة مع معناها:</p>
-                    <div class="interactive-box">
-                        <p>اسحب كل كلمة إلى معناها الصحيح</p>
-                        <div style="display: flex; justify-content: space-between;">
-                            <div style="border: 1px dashed #ccc; padding: 0.5rem; min-height: 100px; width: 45%;" id="words">
-                                <div draggable="true" class="draggable-word" ondragstart="drag(event)">البيت</div>
-                                <div draggable="true" class="draggable-word" ondragstart="drag(event)">المدرسة</div>
+                </article>
+
+                <article class="activity-card">
+                    <h4>لعبة المفردات: المطابقة السحرية</h4>
+                    <p>اطابق الكلمة بمعناها الصحيح لسبر أغوار المفردات الجديدة:</p>
+                    <div class="interactive-box" style="display: flex; flex-direction: column; align-items: center;">
+                        <p>اسحب الكلمة إلى معناها المطابق:</p>
+                        <div style="display: flex; justify-content: space-around; width: 100%; gap: 1rem;">
+                            <div id="wordsContainer" style="border: 2px dashed var(--hp-darkblue); padding: 1rem; min-height: 150px; width: 45%; border-radius: 8px;">
+                                <div draggable="true" class="draggable-word quiz-option" data-word="شجاع">شجاع</div>
+                                <div draggable="true" class="draggable-word quiz-option" data-word="مشرق">مشرق</div>
                             </div>
-                            <div style="border: 1px dashed #ccc; padding: 0.5rem; min-height: 100px; width: 45%;" id="meanings" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                <div>مكان نتعلم فيه</div>
-                                <div>مكان نسكن فيه</div>
+                            <div id="meaningsContainer" style="border: 2px dashed var(--hp-darkblue); padding: 1rem; min-height: 150px; width: 45%; border-radius: 8px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <div class="meaning-target" data-meaning="لا يخاف، جريء">لا يخاف، جريء</div>
+                                <div class="meaning-target" data-meaning="لامع، مضيء">لامع، مضيء</div>
                             </div>
                         </div>
+                        <button class="btn" style="margin-top: 1rem;" onclick="checkVocabularyMatch()">تحقق من المطابقة</button>
+                        <div class="feedback" id="vocabularyFeedback"></div>
                     </div>
-                </div>
+                </article>
             </div>
-        </div>
-        
-        <div id="arabic" style="margin: 3rem 0;">
-            <h2 style="color: var(--primary-color);">دروس اللغة العربية</h2>
-            
-            <div class="subject-card" style="margin-bottom: 1.5rem;">
+        </section>
+
+        <section id="arabic">
+            <h2>دروس اللغة العربية: إتقان لغة الضاد</h2>
+
+            <article class="subject-card" style="margin-bottom: 2rem;">
                 <div class="subject-content">
-                    <h3>النصوص وفهم المقروء</h3>
-                    <p>اقرأ النص التالي ثم أجب عن الأسئلة:</p>
-                    
+                    <h3>النصوص وفهم المقروء: مغامرات في عالم الكلمات</h3>
+                    <p>اقرأ القصة التالية بعناية، ثم أجب عن الأسئلة التي تليها لاختبار فهمك السحري للنص:</p>
+
                     <div class="interactive-box">
-                        <h4>نص: الشحاذ الصغير</h4>
-                        <p>أثار منظر الشحاذ في نفس الكاتب العطف والشفقة والرحمة، وحزّ الأسى في قلبه. كان طفلاً نحيف الجسم، بثياب قديمة بالية، يجلس على جانب الطريق يستعطف الناس.</p>
-                        
-                        <h4 style="margin-top: 1rem;">الأسئلة:</h4>
-                        <ol>
-                            <li>ما هي المشاعر التي أثارها منظر الشحاذ في نفس الكاتب؟</li>
-                            <li>صف حالة الطفل الشحاذ كما وردت في النص.</li>
-                            <li>ما هو موقف الكاتب مما رآه؟</li>
+                        <h4>نص: رحلة السندباد الصغير</h4>
+                        <p>كان هناك طفل صغير يدعى فادي، يحلم بأن يصبح بحارًا مشهورًا مثل السندباد. في كل صباح، كان يتجه إلى شاطئ البحر القريب من قريته، يتأمل السفن وهي تبحر بعيداً، ويستمع إلى حكايات البحارة الكبار عن جزر غريبة وكائنات بحرية عجيبة. ذات يوم، وجد فادي زجاجة قديمة تحمل خريطة بالية. لمعت عيناه حماساً، فقد كانت خريطة لكنز مخبأ في جزيرة مهجورة! قرر فادي أن يخوض مغامرته الخاصة، فجهّز قارباً صغيراً وأخذ معه بعض المؤن، وودّع والديه الذين باركوا شجاعته، وانطلق نحو الأفق.</p>
+                        <p>واجه فادي في رحلته أمواجاً عاتية وعواصف مفاجئة، لكن إصراره وعزيمته لم تهتز. التقى بدلافين ودودة أرشدته الطريق، ورأى طيور النورس تحلق فوق رأسه وكأنها تراقب مساره. بعد أيام وليالٍ، وصل أخيراً إلى الجزيرة المجهولة. كانت الأشجار تكسوها بغزارة، والرمال بيضاء ناصعة. اتبع فادي الخريطة بدقة، وبعد بحث طويل، وجد صندوقاً خشبياً قديماً مدفوناً تحت شجرة نخيل ضخمة. فتحه بحذر ليجد بداخله مجموعة من الكتب القديمة عن الحكمة والمعرفة، ورسالة تقول: "الكنز الحقيقي ليس ذهباً ولا فضة، بل هو العلم والعزيمة والشجاعة."</p>
+
+                        <h4 style="margin-top: 1.5rem;">الأسئلة:</h4>
+                        <ol style="text-align: right;">
+                            <li>ما هو حلم فادي؟</li>
+                            <li>ماذا وجد فادي على شاطئ البحر؟</li>
+                            <li>كيف كانت رحلة فادي وما هي الكائنات التي التقى بها؟</li>
+                            <li>ماذا وجد فادي داخل الصندوق الخشبي؟</li>
+                            <li>ما هي الرسالة التي تعلمها فادي من هذه المغامرة؟</li>
                         </ol>
-                        
-                        <textarea style="width: 100%; min-height: 100px; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;" placeholder="أجب عن الأسئلة هنا..."></textarea>
-                        <button class="btn" style="margin-top: 0.5rem;">تحقق من الإجابات</button>
+
+                        <textarea style="width: 100%; min-height: 150px; padding: 0.8rem; border: 1px solid var(--hp-silver); border-radius: 5px;" placeholder="أجب عن الأسئلة هنا..."></textarea>
+                        <button class="btn" style="margin-top: 0.8rem;">تحقق من إجاباتك</button>
                     </div>
                 </div>
-            </div>
-            
-            <div class="subject-card">
+            </article>
+
+            <article class="subject-card">
                 <div class="subject-content">
-                    <h3>القواعد النحوية</h3>
-                    <p>تعلم الإعراب والتحليل اللغوي:</p>
-                    
+                    <h3>القواعد النحوية: إعراب الكلمات وسحر اللغة</h3>
+                    <p>اكتشف بناء الجملة العربية من خلال تمرين الإعراب، حيث ستتعلم كيف تتحول الكلمات إلى كيانات ذات معنى ودور في الجملة:</p>
+
                     <div class="interactive-box">
-                        <h4>تمرين في الإعراب</h4>
-                        <p>أعرب الكلمات التالية:</p>
-                        <p>"ذهب التلميذ إلى المدرسة"</p>
-                        
-                        <div style="margin-top: 1rem;">
-                            <label>ذهب:</label>
-                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <h4>تمرين في الإعراب: أعرب الجملة التالية</h4>
+                        <p>"صعد الولد الشجاع فوق الشجرة العالية بمهارة"</p>
+
+                        <div style="margin-top: 1.2rem;">
+                            <label>صعد:</label>
+                            <input type="text" data-answer="فعل ماض مبني على الفتح" placeholder="نوع الكلمة وحالتها">
                         </div>
-                        
-                        <div style="margin-top: 0.5rem;">
-                            <label>التلميذ:</label>
-                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <div style="margin-top: 0.8rem;">
+                            <label>الولد:</label>
+                            <input type="text" data-answer="فاعل مرفوع وعلامة رفعه الضمة الظاهرة على آخره" placeholder="فاعل، علامة الرفع">
                         </div>
-                        
-                        <div style="margin-top: 0.5rem;">
-                            <label>إلى:</label>
-                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <div style="margin-top: 0.8rem;">
+                            <label>الشجاع:</label>
+                            <input type="text" data-answer="نعت مرفوع وعلامة رفعه الضمة الظاهرة على آخره" placeholder="نعت، علامة الرفع">
                         </div>
-                        
-                        <div style="margin-top: 0.5rem;">
-                            <label>المدرسة:</label>
-                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <div style="margin-top: 0.8rem;">
+                            <label>فوق:</label>
+                            <input type="text" data-answer="ظرف مكان منصوب وعلامة نصبه الفتحة الظاهرة على آخره" placeholder="ظرف مكان، علامة النصب">
                         </div>
-                        
-                        <button class="btn" style="margin-top: 1rem;">تحقق من الإعراب</button>
+                        <div style="margin-top: 0.8rem;">
+                            <label>الشجرة:</label>
+                            <input type="text" data-answer="مضاف إليه مجرور وعلامة جره الكسرة الظاهرة على آخره" placeholder="مضاف إليه، علامة الجر">
+                        </div>
+                        <div style="margin-top: 0.8rem;">
+                            <label>العالية:</label>
+                            <input type="text" data-answer="نعت مجرور وعلامة جره الكسرة الظاهرة على آخره" placeholder="نعت، علامة الجر">
+                        </div>
+                        <div style="margin-top: 0.8rem;">
+                            <label>بمهارة:</label>
+                            <input type="text" data-answer="الباء: حرف جر. مهارة: اسم مجرور وعلامة جره الكسرة الظاهرة على آخره." placeholder="حرف جر، اسم مجرور">
+                        </div>
+
+                        <button class="btn" style="margin-top: 1.5rem;" onclick="checkArabicGrammar()">تحقق من الإعراب</button>
+                        <div class="feedback" id="arabicGrammarFeedback"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <div id="math" style="margin: 3rem 0;">
-            <h2 style="color: var(--primary-color);">دروس الرياضيات</h2>
-            
-            <div class="subject-card" style="margin-bottom: 1.5rem;">
+            </article>
+        </section>
+
+        <section id="math">
+            <h2>دروس الرياضيات: أسرار الأرقام والأشكال</h2>
+
+            <article class="subject-card" style="margin-bottom: 2rem;">
                 <div class="subject-content">
-                    <h3>المسائل الحسابية</h3>
-                    <p>حل المسائل التالية:</p>
-                    
+                    <h3>المسائل الحسابية: حل الألغاز العددية</h3>
+                    <p>انطلق في رحلة حل المشكلات مع هذه المسائل الحسابية التي تتطلب تركيزاً ودقة:</p>
+
                     <div class="interactive-box">
-                        <h4>مسألة 1:</h4>
-                        <p>اشترى تاجر 12 طنًا من البضاعة. إذا كان وزن العربة فارغة 5 أطنان و322 كيلوغرامًا، فما هو وزن البضاعة بالكيلوغرامات؟</p>
-                        
-                        <div style="margin-top: 1rem;">
-                            <label>الحل:</label>
-                            <input type="number" id="mathProblem1" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <h4>مسألة 1: تجارة التوابل</h4>
+                        <p>اشترى تاجر 15 طنًا و 500 كيلوغرام من التوابل. إذا كان وزن العربة الفارغة 2 طن و 750 كيلوغرامًا. فما هو وزن التوابل الصافي بالكيلوغرامات؟</p>
+
+                        <div style="margin-top: 1.2rem;">
+                            <label for="mathProblem1">وزن التوابل الصافي:</label>
+                            <input type="number" id="mathProblem1" placeholder="أدخل الإجابة بالكيلوغرام">
                             <span>كيلوغرام</span>
                         </div>
-                        
-                        <button class="btn" style="margin-top: 0.5rem;" onclick="checkMathProblem1()">تحقق من الحل</button>
+
+                        <button class="btn" style="margin-top: 0.8rem;" onclick="checkMathProblem1()">تحقق من الحل</button>
                         <div class="feedback" id="mathProblem1Feedback"></div>
                     </div>
+
+                    <div class="interactive-box" style="margin-top: 1.5rem;">
+                        <h4>مسألة 2: مزرعة التفاح</h4>
+                        <p>لدى مزارع 365 شجرة تفاح. أنتجت كل شجرة 45 كيلوغرامًا من التفاح هذا الموسم. كم عدد الكيلوغرامات التي أنتجتها المزرعة كلها؟ وإذا باع المزارع التفاح بسعر 35 دينارًا للكيلوغرام الواحد، فكم سيجني من المال؟</p>
+
+                        <div style="margin-top: 1.2rem;">
+                            <label for="mathProblem2_totalWeight">الوزن الكلي للتفاح (كغ):</label>
+                            <input type="number" id="mathProblem2_totalWeight" placeholder="الوزن الكلي">
+                        </div>
+                        <div style="margin-top: 0.8rem;">
+                            <label for="mathProblem2_totalMoney">المبلغ الإجمالي (دينار):</label>
+                            <input type="number" id="mathProblem2_totalMoney" placeholder="المبلغ الإجمالي">
+                        </div>
+                        <button class="btn" style="margin-top: 0.8rem;" onclick="checkMathProblem2()">تحقق من الحل</button>
+                        <div class="feedback" id="mathProblem2Feedback"></div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="subject-card">
+            </article>
+
+            <article class="subject-card">
                 <div class="subject-content">
-                    <h3>الهندسة</h3>
-                    <p>تعلم الأشكال الهندسية وخصائصها:</p>
-                    
+                    <h3>الهندسة: أبعاد الأشكال والزوايا</h3>
+                    <p>استكشف عالم الأشكال الهندسية وخصائصها الغامضة من خلال هذه التمارين العملية:</p>
+
                     <div class="interactive-box">
-                        <h4>تمرين في الأشكال الهندسية</h4>
-                        <p>احسب مساحة المستطيل إذا علمت أن طوله 20 مترًا وعرضه ربع طوله:</p>
-                        
-                        <div style="margin-top: 1rem;">
-                            <label>مساحة المستطيل =</label>
-                            <input type="number" id="rectangleArea" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <h4>تمرين في الأشكال الهندسية: مساحة حقل</h4>
+                        <p>حقل على شكل مستطيل، طوله 50 مترًا. إذا علمت أن عرضه يساوي نصف طوله، فما هي مساحة هذا الحقل؟</p>
+
+                        <div style="margin-top: 1.2rem;">
+                            <label for="rectangleArea">مساحة الحقل =</label>
+                            <input type="number" id="rectangleArea" placeholder="أدخل الإجابة بالمتر المربع">
                             <span>متر مربع</span>
                         </div>
-                        
-                        <button class="btn" style="margin-top: 0.5rem;" onclick="checkRectangleArea()">تحقق من الحل</button>
+
+                        <button class="btn" style="margin-top: 0.8rem;" onclick="checkRectangleArea()">تحقق من الحل</button>
                         <div class="feedback" id="rectangleAreaFeedback"></div>
                     </div>
+
+                    <div class="interactive-box" style="margin-top: 1.5rem;">
+                        <h4>تمرين في الأشكال الهندسية: محيط مثلث</h4>
+                        <p>مثلث متساوي الأضلاع طول أحد أضلاعه 12 سم. ما هو محيط هذا المثلث؟</p>
+                        <div style="margin-top: 1.2rem;">
+                            <label for="trianglePerimeter">محيط المثلث =</label>
+                            <input type="number" id="trianglePerimeter" placeholder="أدخل الإجابة بالسنتيمتر">
+                            <span>سم</span>
+                        </div>
+                        <button class="btn" style="margin-top: 0.8rem;" onclick="checkTrianglePerimeter()">تحقق من الحل</button>
+                        <div class="feedback" id="trianglePerimeterFeedback"></div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        
-        <div id="french" style="margin: 3rem 0;">
-            <h2 style="color: var(--primary-color);">دروس اللغة الفرنسية</h2>
-            
-            <div class="subject-card" style="margin-bottom: 1.5rem;">
+            </article>
+        </section>
+
+        <section id="french">
+            <h2>Leçons de Français: Maîtriser la Langue de la Magie</h2>
+
+            <article class="subject-card" style="margin-bottom: 2rem;">
                 <div class="subject-content">
-                    <h3>فهم النصوص</h3>
-                    <p>اقرأ النص التالي ثم أجب عن الأسئلة:</p>
-                    
+                    <h3>Compréhension de l'Écrit: Aventures Textuelles</h3>
+                    <p>Lisez attentivement le texte suivant et répondez aux questions pour tester votre compréhension du français:</p>
+
                     <div class="interactive-box">
-                        <h4>Texte : La maison</h4>
-                        <p>La maison est la première école de l'enfant. Elle rassemble toute la famille (père, mère, enfants, grands-parents). La maison contient généralement des chambres, une cuisine, un salon... Nous sommes très joyeux dans la maison.</p>
-                        
-                        <h4 style="margin-top: 1rem;">Questions:</h4>
-                        <ol>
-                            <li>Que rassemble la maison ?</li>
-                            <li>Relève du texte un adverbe.</li>
-                            <li>Fais une phrase avec le mot "joyeux".</li>
+                        <h4>Texte : Une Journée Magique à l'École</h4>
+                        <p>Le matin, les élèves de la cinquième année sont arrivés à l'école avec des étoiles dans les yeux. C'était la journée de la Magie et de l'Innovation. Madame Dubois, leur maîtresse, avait préparé des ateliers extraordinaires. Le premier atelier était dédié à la création de potions scintillantes. Les enfants mélangeaient des liquides colorés et des poudres mystérieuses, observant avec fascination les bulles et les vapeurs qui s'échappaient des chaudrons. Ensuite, ils ont participé à un cours de vol sur balai, même si ce n'était qu'un simulateur, l'excitation était palpable. Certains imaginaient déjà survoler des châteaux enchantés. L'après-midi, ils ont construit de petits robots qui dessinaient des symboles magiques et qui chantaient des mélodies joyeuses. Cette journée fut une expérience inoubliable, remplie de rires, de découvertes et d'une touche de véritable magie.</p>
+
+                        <h4 style="margin-top: 1.5rem;">Questions:</h4>
+                        <ol style="text-align: right;">
+                            <li>Quelle était la journée spéciale à l'école?</li>
+                            <li>Quels ateliers Madame Dubois avait-elle préparés?</li>
+                            <li>Décrivez l'atelier de création de potions.</li>
+                            <li>Qu'ont fait les élèves l'après-midi?</li>
+                            <li>Pourquoi cette journée était-elle inoubliable pour les élèves?</li>
                         </ol>
-                        
-                        <textarea style="width: 100%; min-height: 100px; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;" placeholder="Répondez aux questions ici..."></textarea>
-                        <button class="btn" style="margin-top: 0.5rem;">Vérifier les réponses</button>
+
+                        <textarea style="width: 100%; min-height: 150px; padding: 0.8rem; border: 1px solid var(--hp-silver); border-radius: 5px;" placeholder="Répondez aux questions ici..."></textarea>
+                        <button class="btn" style="margin-top: 0.8rem;">Vérifier les réponses</button>
                     </div>
                 </div>
-            </div>
-            
-            <div class="subject-card">
+            </article>
+
+            <article class="subject-card">
                 <div class="subject-content">
-                    <h3>القواعد الفرنسية</h3>
-                    <p>تمرين في تصريف الأفعال:</p>
-                    
+                    <h3>Grammaire Française: La Conjugaison des Verbes</h3>
+                    <p>Perfectionnez votre français en maîtrisant la conjugaison des verbes essentiels au présent de l'indicatif. C'est la clé pour construire des phrases correctes et fluides!</p>
+
                     <div class="interactive-box">
-                        <h4>Conjugaison des verbes</h4>
-                        <p>Conjuguez le verbe "être" au présent:</p>
-                        
-                        <div style="margin-top: 1rem;">
+                        <h4>Conjugaison du verbe "être" au présent:</h4>
+                        <div style="margin-top: 1.2rem;">
                             <label>Je</label>
-                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="etre_je" data-answer="suis" placeholder="suis">
                         </div>
-                        
-                        <div style="margin-top: 0.5rem;">
+                        <div style="margin-top: 0.8rem;">
                             <label>Tu</label>
-                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="etre_tu" data-answer="es" placeholder="es">
                         </div>
-                        
-                        <div style="margin-top: 0.5rem;">
-                            <label>Il/Elle</label>
-                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <div style="margin-top: 0.8rem;">
+                            <label>Il/Elle/On</label>
+                            <input type="text" id="etre_il" data-answer="est" placeholder="est">
                         </div>
-                        
-                        <div style="margin-top: 0.5rem;">
+                        <div style="margin-top: 0.8rem;">
                             <label>Nous</label>
-                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="etre_nous" data-answer="sommes" placeholder="sommes">
                         </div>
-                        
-                        <div style="margin-top: 0.5rem;">
+                        <div style="margin-top: 0.8rem;">
                             <label>Vous</label>
-                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="etre_vous" data-answer="êtes" placeholder="êtes">
                         </div>
-                        
-                        <div style="margin-top: 0.5rem;">
+                        <div style="margin-top: 0.8rem;">
                             <label>Ils/Elles</label>
-                            <input type="text" style="padding: 0.3rem; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="etre_ils" data-answer="sont" placeholder="sont">
                         </div>
-                        
-                        <button class="btn" style="margin-top: 1rem;">Vérifier les réponses</button>
+                        <button class="btn" style="margin-top: 1.5rem;" onclick="checkFrenchConjugationEtre()">Vérifier la conjugaison</button>
+                        <div class="feedback" id="frenchConjugationEtreFeedback"></div>
+                    </div>
+
+                    <div class="interactive-box" style="margin-top: 1.5rem;">
+                        <h4>Conjugaison du verbe "avoir" au présent:</h4>
+                        <div style="margin-top: 1.2rem;">
+                            <label>J'</label>
+                            <input type="text" id="avoir_je" data-answer="ai" placeholder="ai">
+                        </div>
+                        <div style="margin-top: 0.8rem;">
+                            <label>Tu</label>
+                            <input type="text" id="avoir_tu" data-answer="as" placeholder="as">
+                        </div>
+                        <div style="margin-top: 0.8rem;">
+                            <label>Il/Elle/On</label>
+                            <input type="text" id="avoir_il" data-answer="a" placeholder="a">
+                        </div>
+                        <div style="margin-top: 0.8rem;">
+                            <label>Nous</label>
+                            <input type="text" id="avoir_nous" data-answer="avons" placeholder="avons">
+                        </div>
+                        <div style="margin-top: 0.8rem;">
+                            <label>Vous</label>
+                            <input type="text" id="avoir_vous" data-answer="avez" placeholder="avez">
+                        </div>
+                        <div style="margin-top: 0.8rem;">
+                            <label>Ils/Elles</label>
+                            <input type="text" id="avoir_ils" data-answer="ont" placeholder="ont">
+                        </div>
+                        <button class="btn" style="margin-top: 1.5rem;" onclick="checkFrenchConjugationAvoir()">Vérifier la conjugaison</button>
+                        <div class="feedback" id="frenchConjugationAvoirFeedback"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    
-    <div id="about" style="background-color: var(--light-color); padding: 2rem 0;">
+            </article>
+        </section>
+    </main>
+
+    <section id="about" style="background-color: var(--hp-light-gray); padding: 3rem 0; border-top: 4px solid var(--hp-gold);">
         <div class="container">
-            <h2 style="color: var(--primary-color); text-align: center;">عن منصة العلّامة رؤوف</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.6;">
-                منصة العلّامة رؤوف هي منصة تعليمية إلكترونية متكاملة موجهة لتلاميذ السنة الخامسة ابتدائي. تم تطوير المنصة بناءً على المنهج الدراسي الرسمي مع إضافة أنشطة تفاعلية ممتعة لتسهيل عملية التعلم وجعلها أكثر متعة وفعالية.
+            <h2 style="color: var(--hp-darkblue); text-align: center;">عن منصة العلّامة رؤوف: سحر التعلم</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">
+                منصة العلّامة رؤوف هي بوابتك السحرية إلى عالم التعليم الممتع. صُممت هذه المنصة الإلكترونية المتكاملة خصيصاً لتلاميذ السنة الخامسة ابتدائي، معتمدة على المنهج الدراسي الرسمي ولكن بلمسة سحرية من الأنشطة التفاعلية والتمارين المشوقة لجعل عملية التعلم أكثر جاذبية وفعالية.
                 <br><br>
-                تهدف المنصة إلى دعم التلاميذ في رحلتهم التعليمية من خلال تقديم محتوى تعليمي عالي الجودة، تمارين تفاعلية، وشروحات واضحة تغطي جميع المواد الدراسية.
+                هدفنا هو إشعال شرارة الفضول في نفوس أطفالنا الأعزاء، وتقديم محتوى تعليمي عالي الجودة، وشروحات واضحة، وتمارين مبتكرة تغطي جميع المواد الدراسية، لدعمهم في رحلتهم التعليمية وتمكينهم من تحقيق أقصى إمكاناتهم الأكاديمية.
             </p>
         </div>
-    </div>
-    
+    </section>
+
     <footer>
         <div class="footer-links">
             <a href="#home">الرئيسية</a>
             <a href="#subjects">المواد الدراسية</a>
-            <a href="#activities">الأنشطة</a>
-            <a href="#downloads">التحميلات</a>
+            <a href="#activities">الأنشطة السحرية</a>
+            <a href="#downloads">قاعة التحميلات</a>
             <a href="#about">عن المنصة</a>
             <a href="#" id="contactBtn">اتصل بنا</a>
         </div>
-        <p>جميع الحقوق محفوظة &copy; 2023 منصة العلّامة رؤوف</p>
+        <p>جميع الحقوق محفوظة &copy; 2025 منصة العلّامة رؤوف. كل السحر يعود إلينا.</p>
     </footer>
-    
-    <!-- Contact Modal -->
+
     <div id="contactModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h2>اتصل بنا</h2>
-            <form style="margin-top: 1rem;">
-                <div style="margin-bottom: 1rem;">
-                    <label style="display: block; margin-bottom: 0.3rem;">الاسم:</label>
-                    <input type="text" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+            <h2>اتصل بنا: مراسلة بومة بريدية</h2>
+            <form style="margin-top: 1.5rem;">
+                <div>
+                    <label for="contactName">الاسم الكامل:</label>
+                    <input type="text" id="contactName" placeholder="أدخل اسمك هنا" required>
                 </div>
-                
-                <div style="margin-bottom: 1rem;">
-                    <label style="display: block; margin-bottom: 0.3rem;">البريد الإلكتروني:</label>
-                    <input type="email" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+
+                <div>
+                    <label for="contactEmail">البريد الإلكتروني:</label>
+                    <input type="email" id="contactEmail" placeholder="example@owlpost.com" required>
                 </div>
-                
-                <div style="margin-bottom: 1rem;">
-                    <label style="display: block; margin-bottom: 0.3rem;">الرسالة:</label>
-                    <textarea style="width: 100%; min-height: 100px; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+
+                <div>
+                    <label for="contactMessage">رسالتك السحرية:</label>
+                    <textarea id="contactMessage" placeholder="اكتب رسالتك..." required></textarea>
                 </div>
-                
-                <button type="submit" class="btn">إرسال</button>
+
+                <button type="submit" class="btn">أرسل البومة</button>
             </form>
         </div>
     </div>
-    
-    <!-- Download Modal -->
+
     <div id="downloadModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h2>تحميل الدروس</h2>
-            <p>اختر المادة التي تريد تحميلها:</p>
-            
+            <h2>تحميل الدروس السحرية</h2>
+            <p>اختر مجموعة المخطوطات التي تود تحميلها:</p>
+
             <div style="margin-top: 1.5rem;">
-                <a href="#" class="download-btn" style="display: block; text-align: center; margin-bottom: 1rem;">تحميل دروس اللغة العربية</a>
-                <a href="#" class="download-btn" style="display: block; text-align: center; margin-bottom: 1rem;">تحميل دروس الرياضيات</a>
-                <a href="#" class="download-btn" style="display: block; text-align: center; margin-bottom: 1rem;">تحميل دروس اللغة الفرنسية</a>
-                <a href="#" class="download-btn" style="display: block; text-align: center; background-color: var(--primary-color);">تحميل جميع الدروس</a>
+                <a href="/downloads/arabic_lessons.pdf" class="btn download-btn-modal" style="display: block; text-align: center; margin-bottom: 1rem;" download>تحميل دروس اللغة العربية</a>
+                <a href="/downloads/math_lessons.pdf" class="btn download-btn-modal" style="display: block; text-align: center; margin-bottom: 1rem;" download>تحميل دروس الرياضيات</a>
+                <a href="/downloads/french_lessons.pdf" class="btn download-btn-modal" style="display: block; text-align: center; margin-bottom: 1rem;" download>تحميل دروس اللغة الفرنسية</a>
+                <a href="/downloads/all_lessons.pdf" class="btn download-btn-modal" style="display: block; text-align: center; background-color: var(--hp-darkblue); border-color: var(--hp-gold);" download>تحميل جميع المخطوطات</a>
             </div>
         </div>
     </div>
-    
+
     <script>
-        // Interactive elements functionality
-        function checkOrder() {
-            alert("سيتم التحقق من ترتيب الجمل في نسخة كاملة من المنصة");
-        }
-        
-        function checkMathAnswer() {
-            const answer = document.getElementById('mathAnswer').value;
-            const feedback = document.getElementById('mathFeedback');
-            
-            if (answer === '40') {
-                feedback.textContent = 'إجابة صحيحة! مساحة المستطيل = الطول × العرض = 8 × 5 = 40 متر مربع';
-                feedback.className = 'feedback correct';
-            } else {
-                feedback.textContent = 'إجابة خاطئة، حاول مرة أخرى! تذكر أن مساحة المستطيل = الطول × العرض';
-                feedback.className = 'feedback incorrect';
+        document.addEventListener('DOMContentLoaded', () => {
+            // Helper function to show feedback
+            function showFeedback(elementId, message, isCorrect) {
+                const feedbackElement = document.getElementById(elementId);
+                feedbackElement.textContent = message;
+                feedbackElement.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
             }
-        }
-        
-        function checkFrenchAnswer(element, type) {
-            const feedback = document.getElementById('frenchFeedback');
-            const options = element.parentElement.querySelectorAll('.quiz-option');
-            
-            options.forEach(opt => {
-                opt.classList.remove('correct', 'incorrect');
+
+            // Arabic Order Exercise (Drag and Drop - Simplified Check)
+            const arabicOrderExerciseDiv = document.getElementById('arabicOrderExercise');
+            let draggedItem = null;
+
+            if (arabicOrderExerciseDiv) {
+                arabicOrderExerciseDiv.addEventListener('dragstart', (e) => {
+                    draggedItem = e.target;
+                    e.dataTransfer.setData('text/plain', e.target.dataset.order); // Store original order
+                    e.dataTransfer.effectAllowed = 'move';
+                });
+
+                arabicOrderExerciseDiv.addEventListener('dragover', (e) => {
+                    e.preventDefault(); // Allow drop
+                    const target = e.target;
+                    if (target.classList.contains('quiz-option') && target !== draggedItem) {
+                        const bounding = target.getBoundingClientRect();
+                        const offset = bounding.y + (bounding.height / 2);
+                        if (e.clientY < offset) {
+                            arabicOrderExerciseDiv.insertBefore(draggedItem, target);
+                        } else {
+                            arabicOrderExerciseDiv.insertBefore(draggedItem, target.nextSibling);
+                        }
+                    }
+                });
+
+                arabicOrderExerciseDiv.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    // Drop handled by dragover for visual reordering.
+                });
+
+                arabicOrderExerciseDiv.addEventListener('dragend', () => {
+                    draggedItem = null;
+                });
+            }
+
+            window.checkOrder = function() {
+                const orderedElements = Array.from(arabicOrderExerciseDiv.children);
+                const currentOrder = orderedElements.map(el => parseInt(el.dataset.order, 10));
+                const expectedOrder = [1, 2, 3, 4]; // Based on data-order attributes
+
+                const isCorrect = JSON.stringify(currentOrder) === JSON.stringify(expectedOrder);
+                const feedbackDiv = document.createElement('div');
+                feedbackDiv.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+                feedbackDiv.textContent = isCorrect ? 'أحسنت! الترتيب صحيح.' : 'الترتيب خاطئ، حاول مرة أخرى.';
+
+                const existingFeedback = arabicOrderExerciseDiv.parentElement.querySelector('.feedback');
+                if (existingFeedback) {
+                    existingFeedback.remove();
+                }
+                arabicOrderExerciseDiv.parentElement.appendChild(feedbackDiv);
+            };
+
+            // Math Answer Check (Area of Rectangle)
+            window.checkMathAnswer = function() {
+                const answer = parseFloat(document.getElementById('mathAnswer').value);
+                const correctAnswer = 15 * 8; // Length 15, Width 8
+                const isCorrect = answer === correctAnswer;
+                showFeedback('mathFeedback', isCorrect ? `إجابة صحيحة! مساحة الحديقة هي ${correctAnswer} متر مربع.` : `إجابة خاطئة. تذكر أن مساحة المستطيل = الطول × العرض. حاول مرة أخرى.`, isCorrect);
+            };
+
+            // French Multiple Choice Answer Check
+            window.checkFrenchAnswer = function(element, type) {
+                const options = element.parentElement.querySelectorAll('.quiz-option');
+                options.forEach(opt => {
+                    opt.classList.remove('correct', 'incorrect');
+                });
+
+                const isCorrect = (type === 'correct');
+                element.classList.add(isCorrect ? 'correct' : 'incorrect');
+                showFeedback('frenchFeedback', isCorrect ? `إجابة صحيحة! "sont" هو التصريف الصحيح للفعل "être" مع "Les élèves".` : `إجابة خاطئة. تذكر أن "sont" هو التصريف الصحيح للفعل "être" مع الجمع الغائب.`, isCorrect);
+            };
+
+            // Vocabulary Match (Drag and Drop - Simplified Feedback)
+            let draggedWord = null;
+
+            document.querySelectorAll('.draggable-word').forEach(word => {
+                word.addEventListener('dragstart', (e) => {
+                    draggedWord = e.target;
+                    e.dataTransfer.setData('text/plain', e.target.dataset.word);
+                    e.dataTransfer.effectAllowed = 'move';
+                });
             });
-            
-            if (type === 'correct') {
-                element.classList.add('correct');
-                feedback.textContent = 'إجابة صحيحة! "est" هي الصيغة الصحيحة للفعل être مع المفرد الغائب.';
-                feedback.className = 'feedback correct';
-            } else {
-                element.classList.add('incorrect');
-                feedback.textContent = 'إجابة خاطئة، حاول مرة أخرى! تذكر أن "est" هي الصيغة الصحيحة للفعل être مع المفرد الغائب.';
-                feedback.className = 'feedback incorrect';
+
+            document.getElementById('meaningsContainer').addEventListener('dragover', (e) => {
+                e.preventDefault();
+            });
+
+            document.getElementById('meaningsContainer').addEventListener('drop', (e) => {
+                e.preventDefault();
+                const data = e.dataTransfer.getData('text/plain');
+                const targetMeaningDiv = e.target.closest('.meaning-target');
+
+                if (targetMeaningDiv && draggedWord) {
+                    // In a real application, you'd check if `data` matches `targetMeaningDiv.dataset.meaning`
+                    // For this example, we just move it visually and give a generic message.
+                    if (!targetMeaningDiv.querySelector('.draggable-word')) { // Only drop if target is empty
+                        targetMeaningDiv.appendChild(draggedWord);
+                        draggedWord = null;
+                        document.getElementById('vocabularyFeedback').textContent = 'تم إسقاط الكلمة. اضغط على "تحقق من المطابقة" للنتيجة.';
+                        document.getElementById('vocabularyFeedback').className = 'feedback correct'; // Temporarily green
+                    } else {
+                        document.getElementById('vocabularyFeedback').textContent = 'هذه الخانة ممتلئة. اسحب الكلمة إلى خانة فارغة.';
+                        document.getElementById('vocabularyFeedback').className = 'feedback incorrect';
+                    }
+                }
+            });
+
+            window.checkVocabularyMatch = function() {
+                const words = Array.from(document.querySelectorAll('.draggable-word'));
+                const meanings = Array.from(document.querySelectorAll('.meaning-target'));
+                let allCorrect = true;
+
+                words.forEach(wordElement => {
+                    const parentMeaning = wordElement.closest('.meaning-target');
+                    if (parentMeaning) {
+                        const wordText = wordElement.dataset.word;
+                        const meaningText = parentMeaning.dataset.meaning;
+
+                        // Basic check (this would be more robust with a predefined map in a real app)
+                        if ((wordText === 'شجاع' && meaningText === 'لا يخاف، جريء') ||
+                            (wordText === 'مشرق' && meaningText === 'لامع، مضيء')) {
+                            wordElement.classList.add('correct');
+                            wordElement.classList.remove('incorrect');
+                        } else {
+                            wordElement.classList.add('incorrect');
+                            wordElement.classList.remove('correct');
+                            allCorrect = false;
+                        }
+                    } else {
+                        allCorrect = false; // Word not dropped
+                    }
+                });
+
+                if (allCorrect && words.length === meanings.length) { // Ensure all words are placed and correctly
+                    showFeedback('vocabularyFeedback', 'مذهل! كل الكلمات مطابقة بشكل صحيح!', true);
+                } else {
+                    showFeedback('vocabularyFeedback', 'توجد بعض الأخطاء في المطابقة، حاول مرة أخرى.', false);
+                }
+            };
+
+
+            // Math Problem 1 Check
+            window.checkMathProblem1 = function() {
+                const answer = parseFloat(document.getElementById('mathProblem1').value);
+                // 15 tons = 15000 kg, 500 kg -> 15500 kg
+                // 2 tons = 2000 kg, 750 kg -> 2750 kg
+                const correctAnswer = 15500 - 2750; // Total spice - empty cart weight
+                const isCorrect = answer === correctAnswer;
+                showFeedback('mathProblem1Feedback', isCorrect ? `إجابة صحيحة! وزن التوابل الصافي هو ${correctAnswer} كيلوغرام.` : `إجابة خاطئة. تذكر أن وزن التوابل الصافي = الوزن الكلي - وزن العربة الفارغة. (1 طن = 1000 كغ)`, isCorrect);
+            };
+
+            // Math Problem 2 Check
+            window.checkMathProblem2 = function() {
+                const totalWeightInput = parseFloat(document.getElementById('mathProblem2_totalWeight').value);
+                const totalMoneyInput = parseFloat(document.getElementById('mathProblem2_totalMoney').value);
+
+                const totalApplesWeight = 365 * 45;
+                const totalMoneyEarned = totalApplesWeight * 35;
+
+                const isWeightCorrect = totalWeightInput === totalApplesWeight;
+                const isMoneyCorrect = totalMoneyInput === totalMoneyEarned;
+
+                if (isWeightCorrect && isMoneyCorrect) {
+                    showFeedback('mathProblem2Feedback', `إجابة صحيحة! الوزن الكلي للتفاح: ${totalApplesWeight} كغ. المبلغ الإجمالي: ${totalMoneyEarned} دينار.`, true);
+                } else if (isWeightCorrect && !isMoneyCorrect) {
+                    showFeedback('mathProblem2Feedback', `وزن التفاح الكلي صحيح (${totalApplesWeight} كغ)، لكن حساب المبلغ خاطئ.`, false);
+                } else if (!isWeightCorrect && isMoneyCorrect) {
+                    showFeedback('mathProblem2Feedback', `حساب المبلغ الإجمالي صحيح (${totalMoneyEarned} دينار)، لكن وزن التفاح الكلي خاطئ.`, false);
+                } else {
+                    showFeedback('mathProblem2Feedback', 'إجابتان خاطئتان، حاول مرة أخرى.', false);
+                }
+            };
+
+
+            // Rectangle Area Check
+            window.checkRectangleArea = function() {
+                const answer = parseFloat(document.getElementById('rectangleArea').value);
+                const length = 50;
+                const width = length / 2; // Half the length
+                const correctAnswer = length * width; // Area = length * width
+                const isCorrect = answer === correctAnswer;
+                showFeedback('rectangleAreaFeedback', isCorrect ? `إجابة صحيحة! مساحة الحقل هي ${correctAnswer} متر مربع.` : `إجابة خاطئة. تذكر أن العرض هو نصف الطول، ثم المساحة = الطول × العرض.`, isCorrect);
+            };
+
+            // Triangle Perimeter Check
+            window.checkTrianglePerimeter = function() {
+                const answer = parseFloat(document.getElementById('trianglePerimeter').value);
+                const sideLength = 12;
+                const correctAnswer = sideLength * 3; // Equilateral triangle perimeter
+                const isCorrect = answer === correctAnswer;
+                showFeedback('trianglePerimeterFeedback', isCorrect ? `إجابة صحيحة! محيط المثلث هو ${correctAnswer} سم.` : `إجابة خاطئة. تذكر أن محيط المثلث متساوي الأضلاع = طول الضلع × 3.`, isCorrect);
+            };
+
+
+            // Arabic Grammar Check (Simplified)
+            window.checkArabicGrammar = function() {
+                const inputs = document.querySelectorAll('#arabic .interactive-box input[type="text"]');
+                let allCorrect = true;
+                inputs.forEach(input => {
+                    const expectedAnswer = input.dataset.answer;
+                    const userAnswer = input.value.trim();
+                    if (userAnswer === expectedAnswer) {
+                        input.style.borderColor = '#28a745'; // Green
+                    } else {
+                        input.style.borderColor = '#dc3545'; // Red
+                        allCorrect = false;
+                    }
+                });
+                showFeedback('arabicGrammarFeedback', allCorrect ? 'تهانينا! جميع الإعرابات صحيحة.' : 'توجد بعض الأخطاء في الإعراب، راجع إجاباتك.', allCorrect);
+            };
+
+            // French Conjugation 'être' Check
+            window.checkFrenchConjugationEtre = function() {
+                const conjugations = {
+                    'etre_je': 'suis',
+                    'etre_tu': 'es',
+                    'etre_il': 'est',
+                    'etre_nous': 'sommes',
+                    'etre_vous': 'êtes',
+                    'etre_ils': 'sont'
+                };
+                let allCorrect = true;
+                for (const id in conjugations) {
+                    const input = document.getElementById(id);
+                    if (input) {
+                        const userAnswer = input.value.trim().toLowerCase();
+                        if (userAnswer === conjugations[id]) {
+                            input.style.borderColor = '#28a745';
+                        } else {
+                            input.style.borderColor = '#dc3545';
+                            allCorrect = false;
+                        }
+                    }
+                }
+                showFeedback('frenchConjugationEtreFeedback', allCorrect ? 'Félicitations! Toutes les conjugaisons sont correctes.' : 'Il y a des erreurs dans la conjugaison, réessayez.', allCorrect);
+            };
+
+            // French Conjugation 'avoir' Check
+            window.checkFrenchConjugationAvoir = function() {
+                const conjugations = {
+                    'avoir_je': 'ai',
+                    'avoir_tu': 'as',
+                    'avoir_il': 'a',
+                    'avoir_nous': 'avons',
+                    'avoir_vous': 'avez',
+                    'avoir_ils': 'ont'
+                };
+                let allCorrect = true;
+                for (const id in conjugations) {
+                    const input = document.getElementById(id);
+                    if (input) {
+                        const userAnswer = input.value.trim().toLowerCase();
+                        if (userAnswer === conjugations[id]) {
+                            input.style.borderColor = '#28a745';
+                        } else {
+                            input.style.borderColor = '#dc3545';
+                            allCorrect = false;
+                        }
+                    }
+                }
+                showFeedback('frenchConjugationAvoirFeedback', allCorrect ? 'Félicitations! Toutes les conjugaisons sont correctes.' : 'Il y a des erreurs dans la conjugaison, réessayez.', allCorrect);
+            };
+
+
+            // Modal functionality
+            const contactBtn = document.getElementById('contactBtn');
+            const contactModal = document.getElementById('contactModal');
+            const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+            const downloadModal = document.getElementById('downloadModal');
+            const closeBtns = document.querySelectorAll('.close-btn');
+
+            if (contactBtn) {
+                contactBtn.onclick = function(e) {
+                    e.preventDefault();
+                    if (contactModal) contactModal.style.display = 'flex';
+                };
             }
-        }
-        
-        function checkMathProblem1() {
-            const answer = document.getElementById('mathProblem1').value;
-            const feedback = document.getElementById('mathProblem1Feedback');
-            
-            if (answer === '6678') {
-                feedback.textContent = 'إجابة صحيحة! وزن البضاعة = الوزن الكلي - وزن العربة الفارغة = 12000 - 5322 = 6678 كيلوغرام';
-                feedback.className = 'feedback correct';
-            } else {
-                feedback.textContent = 'إجابة خاطئة، حاول مرة أخرى! تذكر أن وزن البضاعة = الوزن الكلي - وزن العربة الفارغة';
-                feedback.className = 'feedback incorrect';
+
+            if (downloadPdfBtn) {
+                downloadPdfBtn.onclick = function(e) {
+                    e.preventDefault();
+                    if (downloadModal) downloadModal.style.display = 'flex';
+                };
             }
-        }
-        
-        function checkRectangleArea() {
-            const answer = document.getElementById('rectangleArea').value;
-            const feedback = document.getElementById('rectangleAreaFeedback');
-            
-            if (answer === '75') {
-                feedback.textContent = 'إجابة صحيحة! العرض = 20 ÷ 4 = 5 متر، المساحة = 15 × 5 = 75 متر مربع';
-                feedback.className = 'feedback correct';
-            } else {
-                feedback.textContent = 'إجابة خاطئة، حاول مرة أخرى! تذكر أن العرض = ربع الطول، ثم المساحة = الطول × العرض';
-                feedback.className = 'feedback incorrect';
-            }
-        }
-        
-        // Drag and drop functionality
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
-        
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.textContent);
-        }
-        
-        function drop(ev) {
-            ev.preventDefault();
-            const data = ev.dataTransfer.getData("text");
-            const meanings = ev.target;
-            
-            // In a full implementation, we would check if the drop is correct
-            // For now, just show a message
-            alert(`تم إسقاط "${data}" في منطقة المعاني. في النسخة الكاملة سيتم التحقق من التطابق الصحيح.`);
-        }
-        
-        // Modal functionality
-        const contactBtn = document.getElementById('contactBtn');
-        const contactModal = document.getElementById('contactModal');
-        const closeBtns = document.querySelectorAll('.close-btn');
-        const downloadPdfBtn = document.getElementById('downloadPdfBtn');
-        const downloadModal = document.getElementById('downloadModal');
-        
-        contactBtn.onclick = function(e) {
-            e.preventDefault();
-            contactModal.style.display = 'block';
-        }
-        
-        downloadPdfBtn.onclick = function(e) {
-            e.preventDefault();
-            downloadModal.style.display = 'block';
-        }
-        
-        closeBtns.forEach(btn => {
-            btn.onclick = function() {
-                contactModal.style.display = 'none';
-                downloadModal.style.display = 'none';
-            }
+
+            closeBtns.forEach(btn => {
+                btn.onclick = function() {
+                    if (contactModal) contactModal.style.display = 'none';
+                    if (downloadModal) downloadModal.style.display = 'none';
+                };
+            });
+
+            window.onclick = function(event) {
+                if (event.target === contactModal) {
+                    contactModal.style.display = 'none';
+                }
+                if (event.target === downloadModal) {
+                    downloadModal.style.display = 'none';
+                }
+            };
         });
-        
-        window.onclick = function(event) {
-            if (event.target == contactModal) {
-                contactModal.style.display = 'none';
-            }
-            if (event.target == downloadModal) {
-                downloadModal.style.display = 'none';
-            }
-        }
     </script>
 </body>
 </html>
